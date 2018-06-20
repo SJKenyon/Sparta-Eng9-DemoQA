@@ -13,7 +13,7 @@ Feature: As a site user I should be able to view products
     When I click on a product category
     Then it should show me items relating to that category
 
-@single_category
+@single_item
   Scenario: I should be able to view a single item
 
     Given I am on the homepage
@@ -23,7 +23,7 @@ Feature: As a site user I should be able to view products
   Scenario: I should be able to view all products in a list as standard
 
     Given I am on the homepage
-    When I click the all produts link
+    When I click the all products link
     Then I should see all the products in a list
 
   Scenario: I should be able to view all products in a grid
