@@ -19,11 +19,11 @@ Then("it should show me items relating to that category") do
 end
 
 When("I click on an item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.click_individual_item
 end
 
 Then("it should show me that specific items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_single_product_page
 end
 
 When("I click the all products link") do

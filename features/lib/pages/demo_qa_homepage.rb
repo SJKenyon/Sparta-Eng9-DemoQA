@@ -8,6 +8,7 @@ class Homepage
   ALL_PRODUCTS_LINK = 'All Product'
   PRODUCT_CATEGORY_LINK = 'Product Category'
   ACCESSORIES_CATEGORY_LINK = 'Accessories'
+  CAROUSEL_LINK = '#slides'
 
 
   def visit_homepage
@@ -21,6 +22,10 @@ class Homepage
   def click_category
     find_link(PRODUCT_CATEGORY_LINK).hover
     click_link(ACCESSORIES_CATEGORY_LINK)
+  end
+
+  def click_individual_item
+    find(CAROUSEL_LINK).click
   end
 
 
