@@ -47,14 +47,19 @@ Then("it should show the products in a grid format") do
 end
 
 Given("I am on a specific product page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.visit_homepage
+  demo_qa_homepage.click_individual_item
 end
 
 When("I click on the photo") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.click_product_image
 end
 
-Then("it should bring up a larger photo") do
+And("I click on the arrow to browse more photos") do
+  pending
+end
+
+Then("it should bring up an expanded photo") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 

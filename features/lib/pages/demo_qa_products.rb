@@ -17,6 +17,7 @@ class ProductsPage
   # the class. So class vars are a good compromise
   @@grid_view_button = 'Grid'
   @@grid_view_div = 'grid_view_products_page_container'
+  @@product_image = '.product-image'
 
 
   def check_product_categories
@@ -46,6 +47,10 @@ class ProductsPage
 
   def check_grid_view
     page.has_content?(@@grid_view_div)
+  end
+
+  def click_product_image
+    find(:css, @@product_image).click
   end
 
 

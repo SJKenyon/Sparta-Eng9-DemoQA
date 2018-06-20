@@ -34,11 +34,13 @@ Feature: As a site user I should be able to view products
     When I click to view the products in a grid
     Then it should show the products in a grid format
 
-  Scenario: I should be able to view larger images of the products
+@expand_image
+  Scenario: I should be able to view expanded images of the products
 
     Given I am on a specific product page
     When I click on the photo
-    Then it should bring up a larger photo
+    And I click on the arrow to browse more photos
+    Then it should bring up an expanded photo
 
   Scenario: I should be able to add a product to my basket
 
