@@ -1,10 +1,10 @@
 Feature: As a site user I should be able to view products
-
+@all_products
   Scenario: I should be able to view all products
 
     Given I am on the homepage
     When I click on all products
-    Then it should display all products
+    Then it should display all product categories
 
   Scenario: I should be able to view products by catagory
 
