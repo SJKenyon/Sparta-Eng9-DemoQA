@@ -6,7 +6,9 @@ class Homepage
 
   HOMEPAGE_URL = 'http://store.demoqa.com/'
   ALL_PRODUCTS_LINK = 'All Product'
-  PRODUCT_CATEGORY_H1 = 'Product Category'
+  PRODUCT_CATEGORY_LINK = 'Product Category'
+  ACCESSORIES_CATEGORY_LINK = 'Accessories'
+
 
   def visit_homepage
     visit(HOMEPAGE_URL)
@@ -16,8 +18,9 @@ class Homepage
     click_link(ALL_PRODUCTS_LINK)
   end
 
-  def check_product_categories
-    page.has_content?(PRODUCT_CATEGORY_H1)
+  def click_category
+    find_link(PRODUCT_CATEGORY_LINK).hover
+    click_link(ACCESSORIES_CATEGORY_LINK)
   end
 
 

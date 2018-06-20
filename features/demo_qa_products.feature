@@ -6,12 +6,14 @@ Feature: As a site user I should be able to view products
     When I click on all products
     Then it should display all product categories
 
+@product_categories
   Scenario: I should be able to view products by catagory
 
     Given I am on the homepage
-    When I click on a product catagory
-    Then it should show me items relating to that catagory
+    When I click on a product category
+    Then it should show me items relating to that category
 
+@single_category
   Scenario: I should be able to view a single item
 
     Given I am on the homepage
