@@ -20,6 +20,7 @@ Feature: As a site user I should be able to view products
     When I click on an item
     Then it should show me that specific items page
 
+@product_list
   Scenario: I should be able to view all products in a list as standard
 
     Given I am on the homepage

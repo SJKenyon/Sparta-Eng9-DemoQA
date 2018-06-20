@@ -8,10 +8,9 @@ class ProductsPage
   ALL_PRODUCTS_URL = "http://store.demoqa.com/products-page/product-category/"
   PRODUCT_CATEGORY_H1 = 'Product Category'
   ACCESSORIES_CATEGORY_H1 = 'Accessories'
-  DEFAULT_LIST_DIV = 'default_products_page_container'
   SINGLE_PRODUCT_DIV = 'single_product_page_container'
   @people_also_bought = 'People who bought this item also bought:'
-
+  @default_list_div = 'default_products_page_container'
 
 
   def check_product_categories
@@ -25,6 +24,10 @@ class ProductsPage
   def check_single_product_page
     page.has_content?(SINGLE_PRODUCT_DIV)
     page.has_content?(@people_also_bought)
+  end
+
+  def check_product_list
+    page.has_content?(@default_list_div)
   end
 
 

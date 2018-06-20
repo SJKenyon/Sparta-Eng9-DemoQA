@@ -27,11 +27,11 @@ Then("it should show me that specific items page") do
 end
 
 When("I click the all products link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.click_all_products_link
 end
 
 Then("I should see all the products in a list") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_product_list
 end
 
 Given("I am viewing all the products") do
