@@ -35,15 +35,15 @@ Then("I should see all the products in a list") do
 end
 
 Given("I am viewing all the products") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_all_products_page
 end
 
 When("I click to view the products in a grid") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.click_grid_view
 end
 
 Then("it should show the products in a grid format") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_grid_view
 end
 
 Given("I am on a specific product page") do

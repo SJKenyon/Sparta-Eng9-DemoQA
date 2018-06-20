@@ -12,6 +12,12 @@ class ProductsPage
   @people_also_bought = 'People who bought this item also bought:'
   @default_list_div = 'default_products_page_container'
 
+  #Using class variables here because contants are too heavy
+  # and instance variables are lighter but not available everywhere in
+  # the class. So class vars are a good compromise
+  @@grid_view_button = 'Grid'
+  @@grid_view_div = 'grid_view_products_page_container'
+
 
   def check_product_categories
     page.has_content?(PRODUCT_CATEGORY_H1)
@@ -30,7 +36,19 @@ class ProductsPage
     page.has_content?(@default_list_div)
   end
 
+  def visit_all_products_page
+    visit(ALL_PRODUCTS_URL)
+  end
+
+  def click_grid_view
+    find_link(@@grid_view_button).click
+  end
+
+  def check_grid_view
+    page.has_content?(@@grid_view_div)
+  end
 
 
 
-end
+
+end #end of class

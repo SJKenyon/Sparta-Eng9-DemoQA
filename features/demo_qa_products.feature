@@ -27,6 +27,7 @@ Feature: As a site user I should be able to view products
     When I click the all products link
     Then I should see all the products in a list
 
+@product_grid
   Scenario: I should be able to view all products in a grid
 
     Given I am viewing all the products
