@@ -6,7 +6,7 @@ Feature: As a site user I should be able to register
     When I click register
     Then I should be taken to the register page
 
-  Scenario: I should be able to input my details to a form
+  Scenario: I should be able to input my details to a form to register
 
     Given I am on the register page
     And I input a valid username

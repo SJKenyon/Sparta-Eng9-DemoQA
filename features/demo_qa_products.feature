@@ -20,33 +20,33 @@ Feature: As a site user I should be able to view products
 
   Scenario: I should be able to view all products in a list as standard
 
-    Given
-    When
-    Then
+    Given I am on the homepage
+    When I click the all produts link
+    Then I should see all the products in a list
 
   Scenario: I should be able to view all products in a grid
 
-    Given
-    When
-    Then
+    Given I am viewing all the products
+    When I click to view the products in a grid
+    Then it should show the products in a grid format
 
-  Scenario:
+  Scenario: I should be able to view larger images of the products
 
-    Given
-    When
-    Then
+    Given I am on a specific product page
+    When I click on the photo
+    Then it should bring up a larger photo
 
-  Scenario:
+  Scenario: I should be able to add a product to my basket
 
-    Given
-    When
-    Then
+    Given I am viewing a product
+    When I click add to cart
+    Then it should add that specific item to my basket
 
-  Scenario:
+  Scenario: I should be able to be redirected to the homepage when I click the logo
 
-    Given
-    When
-    Then
+    Given I am not on the homepage
+    When I click the demoqa logo
+    Then I should be redirected to the homepage
 
   Scenario:
 
