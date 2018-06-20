@@ -52,7 +52,8 @@ Given("I am on a specific product page") do
 end
 
 When("I click on the photo") do
-  demo_qa_products.click_product_image
+  # demo_qa_products.click_product_image
+  pending
 end
 
 And("I click on the arrow to browse more photos") do
