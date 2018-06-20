@@ -1,6 +1,3 @@
-Given("I am on the homepage") do
-  demo_qa_homepage.visit_homepage
-end
 
 When("I click my account") do
   pending # Write code here that turns the phrase above into concrete actions
