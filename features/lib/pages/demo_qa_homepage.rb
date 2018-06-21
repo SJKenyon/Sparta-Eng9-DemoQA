@@ -40,6 +40,9 @@ class Homepage
   def click_checkout_button
     find_link(@@checkout_button).click
   end
-
+  
+  def visit_checkout
+    click_link("Checkout")
+  end
 
 end #end of class

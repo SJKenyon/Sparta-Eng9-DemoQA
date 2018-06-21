@@ -1,19 +1,20 @@
 Feature: As a site user I should be able to view products
-@all_products
+
+  @all_products
   Scenario: I should be able to view all products
 
     Given I am on the homepage
-    When I click on all products
+    When I hover on all products
     Then it should display all product categories
 
-@product_categories
+  @product_categories
   Scenario: I should be able to view products by catagory
 
     Given I am on the homepage
     When I click on a product category
     Then it should show me items relating to that category
 
-@single_item
+  @single_item
   Scenario: I should be able to view a single item
 
     Given I am on the homepage
@@ -45,17 +46,15 @@ Feature: As a site user I should be able to view products
 @add_product_to_basket
   Scenario: As a first time user I should be able to add a product to my basket
 
-    Given I am on the homepage
-    And I click on a product
-    And I am taken to that individual product's page
-    When I click add to cart
+    Given I am viewing a product
+    When I click add to cart on that one product
     Then it should add that specific item to my basket
 
-@add_three_products_to_basket
-  Scenario: As a first time user I should be able to add three products to my basket
-  Given I am on the homepage
-  When I click on a product
+  Scenario: I should be able to add three products to my basket
 
+    Given I am viewing the all products page
+    When I click add to cart on three seperate items
+    Then it should display those specific items in my basket
 
   Scenario: I should be able to be redirected to the homepage when I click the logo
 
