@@ -61,7 +61,7 @@ And("I click on the arrow to browse more photos") do
 end
 
 Then("it should bring up an expanded photo") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 When("I click on a product") do
@@ -73,21 +73,21 @@ And("I am taken to that individual product's page") do
 end
 
 When("I click add to cart") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Then("it should add that specific item to my basket") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Given("I am not on the homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 When("I click the demoqa logo") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Then("I should be redirected to the homepage") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end

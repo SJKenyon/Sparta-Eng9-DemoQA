@@ -71,5 +71,18 @@ class ProductsPage
     page.has_content?(ITEM_ADDED_MESSAGE)
   end
 
+  def find_checkout_text_1
+    page.find('em', text: '1')
+  end
+
+  def find_checkout_text_3
+    page.find('em', text: '3')
+  end
+
+  def find_buy_buttons
+    page.all(".wpsc_buy_button").each do |button|
+      button.click
+    end
+  end
 
 end #end of class
