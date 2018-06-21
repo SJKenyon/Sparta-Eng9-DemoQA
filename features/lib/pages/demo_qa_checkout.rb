@@ -9,6 +9,9 @@ class CheckoutPage
   @@checkout_error_message = 'Oops, there is nothing in your cart.'
   @@checkout_h1 = 'Checkout'
   @@subtotal_span = 'Sub-Total:'
+  @@continue_button = 'Continue'
+
+  #form fields IN CHECKOUT
 
 
   def check_checkout_page
@@ -33,6 +36,14 @@ class CheckoutPage
 
   def check_subtotal
     page.has_content?(@@subtotal_span)
+  end
+
+  def click_continue_button
+    find_link(@@continue_button).click
+  end
+
+  def fill_checkout_form
+
   end
 
 
