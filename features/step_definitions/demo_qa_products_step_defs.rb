@@ -19,47 +19,57 @@ Then("it should show me items relating to that category") do
 end
 
 When("I click on an item") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.click_individual_item
 end
 
 Then("it should show me that specific items page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_single_product_page
 end
 
 When("I click the all products link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.click_all_products_link
 end
 
 Then("I should see all the products in a list") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_product_list
 end
 
 Given("I am viewing all the products") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_all_products_page
 end
 
 When("I click to view the products in a grid") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.click_grid_view
 end
 
 Then("it should show the products in a grid format") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.check_grid_view
 end
 
 Given("I am on a specific product page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_homepage.visit_homepage
+  demo_qa_homepage.click_individual_item
 end
 
 When("I click on the photo") do
+  # demo_qa_products.click_product_image
+  pending
+end
+
+And("I click on the arrow to browse more photos") do
+  pending
+end
+
+Then("it should bring up an expanded photo") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then("it should bring up a larger photo") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click on a product") do
+  demo_qa_homepage.click_random_homepage_item
 end
 
-Given("I am viewing a product") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I am taken to that individual product's page") do
+  demo_qa_products.check_single_product_page
 end
 
 When("I click add to cart") do

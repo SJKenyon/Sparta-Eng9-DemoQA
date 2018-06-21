@@ -21,25 +21,30 @@ Feature: As a site user I should be able to view products
     When I click on an item
     Then it should show me that specific items page
 
+@product_list
   Scenario: I should be able to view all products in a list as standard
 
     Given I am on the homepage
     When I click the all products link
     Then I should see all the products in a list
 
+@product_grid
   Scenario: I should be able to view all products in a grid
 
     Given I am viewing all the products
     When I click to view the products in a grid
     Then it should show the products in a grid format
 
-  Scenario: I should be able to view larger images of the products
+@expand_image
+  Scenario: I should be able to view expanded images of the products
 
     Given I am on a specific product page
     When I click on the photo
-    Then it should bring up a larger photo
+    And I click on the arrow to browse more photos
+    Then it should bring up an expanded photo
 
-  Scenario: I should be able to add a product to my basket
+@add_product_to_basket
+  Scenario: As a first time user I should be able to add a product to my basket
 
     Given I am viewing a product
     When I click add to cart on that one product

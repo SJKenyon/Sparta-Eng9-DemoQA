@@ -8,6 +8,10 @@ class Homepage
   ALL_PRODUCTS_LINK = 'All Product'
   PRODUCT_CATEGORY_LINK = 'Product Category'
   ACCESSORIES_CATEGORY_LINK = 'Accessories'
+  CAROUSEL_LINK = '#slides'
+  @@homepage_products = 'group'
+  @@homepage_products_array = []
+  @@checkout_button = 'Checkout'
 
 
   def visit_homepage
@@ -23,8 +27,22 @@ class Homepage
     click_link(ACCESSORIES_CATEGORY_LINK)
   end
 
+  def click_individual_item
+    find(CAROUSEL_LINK).click
+  end
+
+  def click_random_homepage_item
+    all(@@homepage_products).each { |product|
+      @@homepage_products_array.push(product)
+    }
+  end
+
+  def click_checkout_button
+    find_link(@@checkout_button).click
+  end
+  
   def visit_checkout
     click_link("Checkout")
   end
 
-end
+end #end of class
