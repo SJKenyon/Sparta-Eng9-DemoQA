@@ -11,20 +11,19 @@ Then("I should see the correct error message") do
 end
 
 Given("that I am on an individual product page") do
-  
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_iphone
 end
 
-Given("I click on add to cart") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I click on add to cart") do
+  demo_qa_products.add_to_cart
 end
 
-Given("I click on the checkout button") do
-  pending # Write code here that turns the phrase above into concrete actions
+And("I click on the checkout button") do
+  demo_qa_homepage.visit_checkout
 end
 
 Then("I should see the subtotal of my basket on the checkout page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.check_subtotal
 end
 
 Then("it should redirect me to the checkout page") do
