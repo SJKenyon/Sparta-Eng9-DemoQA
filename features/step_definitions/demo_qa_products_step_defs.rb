@@ -2,8 +2,8 @@ Given("I am on the homepage") do
   demo_qa_homepage.visit_homepage
 end
 
-When("I click on all products") do
-  demo_qa_homepage.click_all_products_link
+When("I hover on all products") do
+  pending
 end
 
 Then("it should display all product categories") do
@@ -64,15 +64,11 @@ Then("it should bring up an expanded photo") do
   pending
 end
 
-When("I click on a product") do
-  demo_qa_homepage.click_random_homepage_item
+Given("I am viewing a product") do
+  pending
 end
 
-And("I am taken to that individual product's page") do
-  demo_qa_products.check_single_product_page
-end
-
-When("I click add to cart") do
+When("I click add to cart on that one product") do
   pending
 end
 
@@ -80,14 +76,23 @@ Then("it should add that specific item to my basket") do
   pending
 end
 
-Given("I am not on the homepage") do
+When("I click add to cart on three seperate items") do
   pending
+end
+
+Then("it should display those specific items in my basket") do
+  pending
+end
+
+Given("I am not on the homepage") do
+  demo_qa_products.visit_all_products_page
+  expect(demo_qa_homepage.current_url).not_to eq("http://store.demoqa.com/")
 end
 
 When("I click the demoqa logo") do
-  pending
+  demo_qa_products.click_logo
 end
 
 Then("I should be redirected to the homepage") do
-  pending
+  expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/")
 end
