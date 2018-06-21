@@ -17,7 +17,7 @@ class CheckoutPage
   def check_error_message
     page.has_content?(@@checkout_error_message)
   end
-  
+
   def find_checkout_quantity
     find_link("Checkout").text
   end
@@ -30,7 +30,4 @@ class CheckoutPage
     page.all('table tr').count
   end
 
-
-
 end #end of class
-
