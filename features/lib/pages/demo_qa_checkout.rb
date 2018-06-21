@@ -8,6 +8,7 @@ class CheckoutPage
   CHECKOUT_URL = "http://store.demoqa.com/products-page/checkout/"
   @@checkout_error_message = 'Oops, there is nothing in your cart.'
   @@checkout_h1 = 'Checkout'
+  @@subtotal_span = 'Sub-Total:'
 
 
   def check_checkout_page
@@ -25,5 +26,11 @@ class CheckoutPage
   def check_item_count
     page.all('table tr').count
   end
+
+  def check_subtotal
+    page.has_content?(@@subtotal_span)
+  end
+
+
 
 end #end of class
