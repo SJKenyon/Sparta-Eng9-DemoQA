@@ -9,12 +9,15 @@ http://www.yopmail.com/en/email-generator.php
 ## Test Plan
 
 ### Scope of the Project
+
 We are going to cover over twenty user journeys: we have broken down each into its constituent use cases within the feature files.
 
 ### Assumptions
+
 We assume that the Demo QA website is not going to be subject to changes: this will enable our test framework to remain valid for the duration of the project.
 
 ### Schedules
+
 Sprint 1: Monday 18th June to 10h30 on Wednesday 21st June
 During this sprint we will define the use cases, prioritise them, and articulate them in the Gherkin syntax in various feature files. We will build our automated test framework for those use cases with the highest priority rating (8).
 
@@ -23,7 +26,8 @@ During Sprint 2 we will focus on building the parts of the framework relevant to
 
 
 ### Roles and Responsibilities
-Team members: Sophie Kenyon and Evie Skinner (+44 07964291842)
+
+Team members: Sophie Kenyon and Evie Skinner
 
 Test lead / Scrum Master / Product Owner: Richard Gurney
 
@@ -31,6 +35,7 @@ The responsibilities will be shared evenly between the two team members, with on
 
 
 ### Deliverables
+
 - Draw out the use cases
 - Make the scrum board
 - Update the Trello board
@@ -40,12 +45,15 @@ The responsibilities will be shared evenly between the two team members, with on
 
 
 ### Environment
+
 We are using Git for version control; Cucumber to run the tests (with Gherkin syntax to write the use cases); with Selenium WebDriver and Capybara as automation tools. In addition, Trello will be used to manage the progress of the project.
 
 ### Defect Management
+
 Defects will be reported to the Test Lead Rich Gurney, by showing him in person or via his regular reviews of the team's pull requests on GitHub.
 
 ### Exit Criteria
+
 We will stop testing either when we have tested all of the use cases, or when we deem a sufficient proportion of the use cases to have been covered within the time frame.
 
 

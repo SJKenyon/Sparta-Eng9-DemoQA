@@ -23,6 +23,8 @@ class Homepage
     click_link(ACCESSORIES_CATEGORY_LINK)
   end
 
-
+  def visit_checkout
+    click_link("Checkout")
+  end
 
 end
