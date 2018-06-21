@@ -89,3 +89,23 @@ end
 Given("I am viewing the all products page") do
   demo_qa_products.visit_all_products
 end
+
+
+
+
+
+
+
+
+#@error_buy_product
+Given("that I am on the checkout form page") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I input invalid details in the form") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should receive the correct error message") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
