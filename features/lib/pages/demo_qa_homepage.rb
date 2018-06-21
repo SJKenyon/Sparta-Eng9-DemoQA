@@ -9,6 +9,7 @@ class Homepage
   PRODUCT_CATEGORY_LINK = 'Product Category'
   ACCESSORIES_CATEGORY_LINK = 'Accessories'
   CAROUSEL_LINK = '#slides'
+  @@homepage_products_array = 'group'
 
 
   def visit_homepage
@@ -28,6 +29,9 @@ class Homepage
     find(CAROUSEL_LINK).click
   end
 
+  def click_random_homepage_item
+    find_link([@@homepage_products_array].sample).click
+  end
 
 
 end #end of class

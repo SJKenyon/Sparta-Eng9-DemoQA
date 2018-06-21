@@ -42,11 +42,20 @@ Feature: As a site user I should be able to view products
     And I click on the arrow to browse more photos
     Then it should bring up an expanded photo
 
-  Scenario: I should be able to add a product to my basket
+@add_product_to_basket
+  Scenario: As a first time user I should be able to add a product to my basket
 
-    Given I am viewing a product
+    Given I am on the homepage
+    And I click on a product
+    And I am taken to that individual product's page
     When I click add to cart
     Then it should add that specific item to my basket
+
+@add_three_products_to_basket
+  Scenario: As a first time user I should be able to add three products to my basket
+  Given I am on the homepage
+  When I click on a product
+
 
   Scenario: I should be able to be redirected to the homepage when I click the logo
 

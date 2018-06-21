@@ -64,8 +64,12 @@ Then("it should bring up an expanded photo") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Given("I am viewing a product") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click on a product") do
+  demo_qa_homepage.click_random_homepage_item
+end
+
+And("I am taken to that individual product's page") do
+  demo_qa_products.check_single_product_page
 end
 
 When("I click add to cart") do
