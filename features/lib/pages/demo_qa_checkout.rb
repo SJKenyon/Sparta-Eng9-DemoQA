@@ -1,4 +1,5 @@
 require 'capybara/dsl'
+require_relative '../generator/random_form_values'
 
 class CheckoutPage
 
@@ -11,8 +12,11 @@ class CheckoutPage
   @@subtotal_span = 'Sub-Total:'
   @@continue_button = 'Continue'
 
-  #form fields IN CHECKOUT
+  #Instantiating the random generator
+  @@random_generator = RandomFormValues.new
 
+  #form fields IN CHECKOUT
+  # @@region_field = find_field('shippingstate')
 
   def check_checkout_page
     page.has_content?(@@checkout_h1)
@@ -43,7 +47,15 @@ class CheckoutPage
   end
 
   def fill_checkout_form
+    select(@@random_generator.random_country_from_array,
+      :from => 'country', visible: false)
 
+    fill_in('collected_data[15]',
+      :with => @@random_generator.random_region)
+  end
+
+  def check_successful_purchase
+    page.has_content?('Thank you, your purchase is pending. You will be sent an email once the order clears.')
   end
 
 

@@ -41,10 +41,11 @@ When("I click the continue button") do
 end
 
 And("I fill in the form correctly") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.fill_checkout_form
 end
 
 Then("it should give me the correct success message") do
+  # demo_qa_checkout.check_successful_purchase
   pending # Write code here that turns the phrase above into concrete actions
 end
 
