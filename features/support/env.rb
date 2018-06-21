@@ -9,7 +9,7 @@ end
 
 #Cap config methods.
 Capybara.configure do |config|
-  config.ignore_hidden_elements = false
+  config.ignore_hidden_elements = true
   config.default_max_wait_time = 10
   config.default_driver = :chrome
 end
