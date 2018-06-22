@@ -41,12 +41,12 @@ When("I click the continue button") do
 end
 
 And("I fill in the form correctly") do
-  demo_qa_checkout.fill_checkout_form
+  #not yet working
+  demo_qa_checkout.fill_shipping_price_form
 end
 
 Then("it should give me the correct success message") do
-  # demo_qa_checkout.check_successful_purchase
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.check_successful_purchase
 end
 
 
@@ -83,27 +83,31 @@ Then("there should only be three items to view") do
   demo_qa_checkout.check_item_count.should == 4
 end
 
+Given("that I am on the checkout form page") do
+  demo_qa_products.visit_iphone
+  demo_qa_products.add_to_cart
+  demo_qa_homepage.visit_checkout
+  demo_qa_checkout.click_continue_button
+
+end
+
+#  @error_shipping_region
+When("I neglect to input a shipping region") do
+  demo_qa_checkout.click_calculate
+end
+
+Then("I should receive the correct error message") do
+  demo_qa_checkout.check_shipping_error_message
+end
+
+
 #@error_buy_product
-Given("that I am on the checkout form page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
 
 When("I input invalid details in the form") do
+
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then("I should receive the correct error message") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Given("that I am on the checkout form page") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-When("I input invalid details in the form") do
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then("I should receive the correct error message") do
+Then("I should receive the right error message") do
   pending # Write code here that turns the phrase above into concrete actions
 end

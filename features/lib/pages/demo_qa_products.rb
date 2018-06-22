@@ -65,6 +65,7 @@ class ProductsPage
 
   def add_to_cart
     click_on("Add To Cart")
+    sleep 2
   end
 
   def item_added

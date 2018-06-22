@@ -39,12 +39,19 @@ Feature: As a site user I want to use the checkout
     When I view my basket
     Then there should only be three items to view
 
+  @error_shipping_region
+  Scenario: If I fail to input a shipping region, I should receive the correct error message
+
+    Given that I am on the checkout form page
+    When I neglect to input a shipping region
+    Then I should receive the correct error message
+
   @error_buy_product
   Scenario: I try to buy a product but have input invalid form data
 
     Given that I am on the checkout form page
     When I input invalid details in the form
-    Then I should receive the correct error message
+    Then I should receive the right error message
 
   Scenario:
 
