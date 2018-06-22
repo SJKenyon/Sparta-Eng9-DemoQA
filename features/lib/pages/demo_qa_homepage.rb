@@ -13,6 +13,9 @@ class Homepage
   @@homepage_products_array = []
   @@checkout_button = 'Checkout'
 
+  def check_url
+    driver.current_url
+  end
 
   def visit_homepage
     visit(HOMEPAGE_URL)
@@ -40,7 +43,7 @@ class Homepage
   def click_checkout_button
     find_link(@@checkout_button).click
   end
-  
+
   def visit_checkout
     click_link("Checkout")
   end

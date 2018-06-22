@@ -49,9 +49,11 @@ Then("it should give me the correct success message") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
+
 # Then("it should redirect me to the checkout page") do
 #   expect(demo_qa_checkout.current_url).to eq("http://store.demoqa.com/products-page/checkout/")
 # end
+
 
 Given("I have added one item to my basket") do
   demo_qa_products.visit_all_products_page
@@ -82,6 +84,18 @@ Then("there should only be three items to view") do
 end
 
 #@error_buy_product
+Given("that I am on the checkout form page") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+When("I input invalid details in the form") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I should receive the correct error message") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 Given("that I am on the checkout form page") do
   pending # Write code here that turns the phrase above into concrete actions
 end
