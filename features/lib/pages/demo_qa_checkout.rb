@@ -16,7 +16,7 @@ class CheckoutPage
   @@random_generator = RandomFormValues.new
 
   #form fields IN CHECKOUT
-  # @@region_field = find_field('shippingstate')
+  # @@region_field = find_field(:title, 'shippingstate')
 
   def check_checkout_page
     page.has_content?(@@checkout_h1)
@@ -50,7 +50,9 @@ class CheckoutPage
     select(@@random_generator.random_country_from_array,
       :from => 'country', visible: false)
 
-    fill_in('collected_data[15]',
+    @region_field = find(:xpath, '//*[@id="change_country"]/input[2]')
+
+    fill_in(@region_field,
       :with => @@random_generator.random_region)
   end
 
