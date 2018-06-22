@@ -3,7 +3,8 @@ require 'faker'
 class RandomFormValues
   include Faker
 
-  def generate_first_name
+
+  def generate_first_and_last_name
     @first_name = Faker::BackToTheFuture.character
   end
 
@@ -53,9 +54,22 @@ class RandomFormValues
     @country_options.sample
   end
 
-  def random_region
+  def generate_region
     @region = Faker::Address.state
   end
+
+  def generate_first_name
+    @first_name = Faker::Name.first_name
+  end
+
+  def generate_address
+    @address = Faker::Address.street_address
+  end
+
+  def generate_city
+    @city = Faker::Address.city
+  end
+
 
 
 end #end of class

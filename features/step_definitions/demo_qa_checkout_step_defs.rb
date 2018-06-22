@@ -41,8 +41,15 @@ When("I click the continue button") do
 end
 
 And("I fill in the form correctly") do
-  #not yet working
-  demo_qa_checkout.fill_shipping_price_form
+  demo_qa_checkout.fill_shipping_country
+  demo_qa_checkout.click_calculate
+  demo_qa_checkout.fill_email_field
+  demo_qa_checkout.fill_first_name_field
+  demo_qa_checkout.fill_surname_field
+  demo_qa_checkout.fill_address_field
+  demo_qa_checkout.fill_city_field
+
+  demo_qa_checkout.click_purchase
 end
 
 Then("it should give me the correct success message") do

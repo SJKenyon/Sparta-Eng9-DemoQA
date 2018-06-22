@@ -65,6 +65,7 @@ class ProductsPage
 
   def add_to_cart
     click_on("Add To Cart")
+    #Without the sleep it was not waiting long enough for the button to load
     sleep 2
   end
 
