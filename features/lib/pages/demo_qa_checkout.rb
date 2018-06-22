@@ -24,6 +24,10 @@ class CheckoutPage
   @@surname_field = 'wpsc_checkout_form_3'
   @@address_field = 'wpsc_checkout_form_4'
   @@city_field = 'wpsc_checkout_form_5'
+  @@region_field = 'wpsc_checkout_form_6'
+  @@postcode_field = 'wpsc_checkout_form_8'
+  @@phone_num_field = 'wpsc_checkout_form_18'
+  @@billing_address_checkbox = 'shippingSameBilling'
 
 
   def check_checkout_page
@@ -83,15 +87,34 @@ class CheckoutPage
   def fill_city_field
     fill_in(@@city_field, :with => @@random_generator.generate_city)
   end
-  # def fill_postcode_field
-  #   fill_in()
-  # end
+
+  def fill_region_field
+    fill_in(@@region_field, :with => @@random_generator.generate_region)
+  end
+
+  def fill_postcode_field
+    fill_in(@@postcode_field, :with => @@random_generator.generate_postcode)
+  end
+
+  def fill_billing_country
+    select(@@random_generator.random_country_from_array,
+      :from => 'wpsc_checkout_form_7', visible: false)
+  end
+
+  def fill_phone_num_field
+    fill_in(@@phone_num_field, :with => @@random_generator.generate_phone_number)
+  end
+
+  def tick_billing_address_box
+    check(@@billing_address_checkbox)
+  end
 
   def click_purchase
     click_on(@@purchase_button)
   end
 
   def check_successful_purchase
+    page.has_content?('Transaction Results')
     page.has_content?('Thank you, your purchase is pending. You will be sent an email once the order clears.
       Thank you for purchasing with ONLINE STORE, any items to be shipped will be processed as soon as possible,
       any items that can be downloaded can be downloaded using the links on this page. All prices include tax and

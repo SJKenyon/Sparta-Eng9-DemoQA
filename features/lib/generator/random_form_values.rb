@@ -70,6 +70,10 @@ class RandomFormValues
     @city = Faker::Address.city
   end
 
+  def generate_postcode
+    @postcode = Faker::Address.postcode
+  end
+
 
 
 end #end of class

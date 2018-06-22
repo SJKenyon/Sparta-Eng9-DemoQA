@@ -48,6 +48,11 @@ And("I fill in the form correctly") do
   demo_qa_checkout.fill_surname_field
   demo_qa_checkout.fill_address_field
   demo_qa_checkout.fill_city_field
+  demo_qa_checkout.fill_region_field
+  demo_qa_checkout.fill_postcode_field
+  demo_qa_checkout.fill_billing_country
+  demo_qa_checkout.fill_phone_num_field
+  demo_qa_checkout.tick_billing_address_box
 
   demo_qa_checkout.click_purchase
 end
