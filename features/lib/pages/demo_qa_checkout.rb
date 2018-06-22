@@ -30,10 +30,6 @@ class CheckoutPage
     find_link("Checkout").text
   end
 
-  def check_url
-    driver.current_url
-  end
-
   def check_item_count
     page.all('table tr').count
   end

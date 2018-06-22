@@ -85,4 +85,8 @@ class ProductsPage
     end
   end
 
+  def click_logo
+    find(:id, "logo").click
+  end
+
 end #end of class
