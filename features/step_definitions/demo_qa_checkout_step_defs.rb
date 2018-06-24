@@ -16,6 +16,7 @@ end
 
 And("I click on add to cart") do
   demo_qa_products.add_to_cart
+  demo_qa_products.find_checkout_text_1
 end
 
 And("I click on the checkout button") do
@@ -34,12 +35,12 @@ Given("that I am on the checkout page") do
   demo_qa_homepage.click_checkout_button
 end
 
-And("there are items in my basket") do
+And("there is an item in my basket") do
   expect(demo_qa_checkout.check_item_count).to be >= 2
 end
 
 When("I click the continue button") do
-  demo_qa_checkout.click_continue
+  demo_qa_checkout.click_continue_button
 end
 
 And("I fill in the form correctly") do
@@ -61,7 +62,6 @@ end
 Then("it should give me the correct success message") do
   demo_qa_checkout.check_successful_purchase
 end
-
 
 Given("I have added one item to my basket") do
   demo_qa_products.visit_all_products_page
@@ -88,15 +88,15 @@ Given("I have added three seperate items to my basket") do
 end
 
 Then("there should only be three items to view") do
-  demo_qa_checkout.check_item_count.should == 4
+  expect(demo_qa_checkout.check_item_count).to eq 4
 end
 
 Given("that I am on the checkout form page") do
   demo_qa_products.visit_iphone
   demo_qa_products.add_to_cart
+  demo_qa_products.find_checkout_text_1
   demo_qa_homepage.visit_checkout
   demo_qa_checkout.click_continue_button
-
 end
 
 #  @error_shipping_region

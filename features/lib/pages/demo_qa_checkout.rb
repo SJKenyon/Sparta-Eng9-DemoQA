@@ -100,8 +100,7 @@ class CheckoutPage
   end
 
   def fill_billing_country
-    select(@@random_generator.random_country_from_array,
-      :from => 'wpsc_checkout_form_7', visible: false)
+    select(@@random_generator.random_country_from_array, :from => 'wpsc_checkout_form_7', visible: false)
   end
 
   def fill_phone_num_field
@@ -124,8 +123,6 @@ class CheckoutPage
       postage and packaging where applicable. You ordered these items:')
   end
 
-
-
   def fill_out_form_correctly
     find(:id, "wpsc_checkout_form_9").send_keys("example@gmail.com")
     find(:id, "wpsc_checkout_form_2").send_keys("example")
@@ -133,7 +130,7 @@ class CheckoutPage
     find(:id, "wpsc_checkout_form_4").send_keys("some random street")
     find(:id, "wpsc_checkout_form_5").send_keys("city")
     find(:id, "wpsc_checkout_form_6").send_keys("dont know")
-    # find("#wpsc_checkout_form_7").find(:xpath, 'option[2]').select_option
+    select("Albania", :from => 'wpsc_checkout_form_7', visible: false)
     find(:id, "wpsc_checkout_form_18").send_keys("07856434567")
     find(:id, "shippingSameBilling").click
   end
@@ -163,7 +160,6 @@ class CheckoutPage
     fill_in(@@phone_num_field, :with => "")
   end
 
-
   def check_email_error
     page.has_content?("Please enter a valid email.")
   end
@@ -191,7 +187,6 @@ class CheckoutPage
   def check_phone_num_error
     page.has_content?("Please enter a valid phone.")
   end
-
 
   #there are two methods called click_purchase so not sur ewhich one to keep
   # def click_purchase

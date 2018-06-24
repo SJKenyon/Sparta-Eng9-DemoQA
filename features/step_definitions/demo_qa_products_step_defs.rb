@@ -64,26 +64,6 @@ Then("it should bring up an expanded photo") do
   pending
 end
 
-Given("I am viewing a product") do
-  pending
-end
-
-When("I click add to cart on that one product") do
-  pending
-end
-
-Then("it should add that specific item to my basket") do
-  pending
-end
-
-When("I click add to cart on three seperate items") do
-  pending
-end
-
-Then("it should display those specific items in my basket") do
-  pending
-end
-
 Given("I am not on the homepage") do
   demo_qa_products.visit_all_products_page
   expect(demo_qa_homepage.current_url).not_to eq("http://store.demoqa.com/")
