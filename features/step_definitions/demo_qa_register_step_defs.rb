@@ -27,7 +27,7 @@ When("I click to register the account") do
 end
 
 Then("it should show the correct registration message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(demo_qa_account.successful_reg).to eq true
 end
 
 Given("I have got email confirmation") do

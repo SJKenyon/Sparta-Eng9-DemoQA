@@ -66,4 +66,8 @@ class AccountPage
     page.has_content?(WRONG_PASSWORD_ALERT)
   end
 
+  def successful_reg
+    page.has_content?(SUCCESSFUL_REGISTRATION)
+  end
+
 end
