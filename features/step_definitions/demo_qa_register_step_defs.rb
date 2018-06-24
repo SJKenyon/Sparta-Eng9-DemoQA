@@ -15,11 +15,11 @@ Given("I am on the register page") do
 end
 
 And("I input a valid username") do
-  demo_qa_account.fill_in_username
+  demo_qa_account.valid_username
 end
 
 And("I input a valid email") do
-  demo_qa_account.fill_in_email
+  demo_qa_account.valid_email
 end
 
 When("I click to register the account") do
@@ -31,17 +31,17 @@ Then("it should show the correct registration message") do
 end
 
 Given("I have got email confirmation") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 When("I click the verify link") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 When("I create a valid password") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Then("it should let me log in") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end

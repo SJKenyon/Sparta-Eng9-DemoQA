@@ -12,7 +12,6 @@ class CheckoutPage
   @@subtotal_span = 'Sub-Total:'
   @@continue_button = 'Continue'
 
-
   #Instantiating the random generator
   @@random_generator = RandomFormValues.new
 

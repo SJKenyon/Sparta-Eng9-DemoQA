@@ -1,4 +1,5 @@
 require 'capybara/dsl'
+require_relative '../generator/random_form_values'
 
 class AccountPage
 
@@ -13,6 +14,7 @@ class AccountPage
   NO_USERNAME = "ERROR: The username field is empty."
   NO_PASSWORD = "ERROR: The password field is empty."
   CORRECT_EMAIL = ".           skenyon@spartaglobal.com"
+  @@random_generator = RandomFormValues.new
 
   def visit_account_page
     visit(ACCOUNT_URL)
@@ -68,6 +70,14 @@ class AccountPage
 
   def successful_reg
     page.has_content?(SUCCESSFUL_REGISTRATION)
+  end
+
+  def valid_username
+    fill_in("user_login", :with => @@random_generator.generate_username)
+  end
+
+  def valid_email
+    fill_in("user_email", :with => @@random_generator.generate_email_address)
   end
 
 end
