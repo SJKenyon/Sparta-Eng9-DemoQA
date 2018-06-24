@@ -46,22 +46,9 @@ Feature: As a site user I want to use the checkout
     When I neglect to input a shipping region
     Then I should receive the correct error message
 
-  @email_error
-  Scenario: I try to buy a product but have input an invalid email address
+  @form_errors
+  Scenario: I try to buy a product but have input invalid form data
 
     Given that I am on the checkout form page
-    When I input an invalid email address in the form
-    Then I should receive the right error message
-
-  @first_name_error
-  Scenario: I try to buy a product but have input an invalid first name
-
-    Given that I am on the checkout form page
-    When I input an invalid first name in the form
-    Then I should receive the first name error message
-
-  @surname_error
-  Scenario: I try to buy a product but have input an invalid surname
-    Given that I am on the checkout form page
-    When I input an invalid surname in the form
-    Then I should receive the surname error message
+    When I input invalid values in the form
+    Then I should receive the right error messages

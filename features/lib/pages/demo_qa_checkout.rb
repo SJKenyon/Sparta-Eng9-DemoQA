@@ -138,29 +138,60 @@ class CheckoutPage
     find(:id, "shippingSameBilling").click
   end
 
+#Checking that error messages are working correctly
   def input_invalid_email
     fill_in(@@email_field, :with => @@random_generator.generate_invalid_username)
-  end
-
-  def check_email_error
-    page.has_content?("Please enter a valid email.")
   end
 
   def input_invalid_first_name
     fill_in(@@first_name_field, :with => "")
   end
 
-  def check_first_name_error
-    page.has_content?("Please enter a valid first name.")
-  end
-
   def input_invalid_surname
     fill_in(@@surname_field, :with => "")
+  end
+
+  def input_invalid_address
+    fill_in(@@address_field, :with => "")
+  end
+
+  def input_invalid_city
+    fill_in(@@city_field, :with => "")
+  end
+
+  def input_invalid_phone_num
+    fill_in(@@phone_num_field, :with => "")
+  end
+
+
+  def check_email_error
+    page.has_content?("Please enter a valid email.")
+  end
+
+  def check_first_name_error
+    page.has_content?("Please enter a valid first name.")
   end
 
   def check_surname_error
     page.has_content?("Please enter a valid last name.")
   end
+
+  def check_address_error
+    page.has_content?("Please enter a valid address.")
+  end
+
+  def check_city_error
+    page.has_content?("Please enter a valid city.")
+  end
+
+  def check_billing_country_error
+    page.has_content?("Please enter a valid country.")
+  end
+
+  def check_phone_num_error
+    page.has_content?("Please enter a valid phone.")
+  end
+
 
   #there are two methods called click_purchase so not sur ewhich one to keep
   # def click_purchase

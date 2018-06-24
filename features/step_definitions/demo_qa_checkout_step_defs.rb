@@ -108,28 +108,32 @@ Then("I should receive the correct error message") do
   demo_qa_checkout.check_shipping_error_message
 end
 
-# @email_error
-When("I input an invalid email address in the form") do
+# @form_errors. Checking that all the error messages
+# are working in one test
+When("I input invalid values in the form") do
   demo_qa_checkout.input_invalid_email
+  demo_qa_checkout.input_invalid_first_name
+  demo_qa_checkout.input_invalid_surname
+  demo_qa_checkout.input_invalid_address
+  demo_qa_checkout.input_invalid_city
+  demo_qa_checkout.input_invalid_phone_num
 
-  demo_qa_checkout.fill_first_name_field
-  demo_qa_checkout.fill_surname_field
-  demo_qa_checkout.fill_address_field
-  demo_qa_checkout.fill_city_field
-  demo_qa_checkout.fill_region_field
-  demo_qa_checkout.fill_postcode_field
-  demo_qa_checkout.fill_billing_country
-  demo_qa_checkout.fill_phone_num_field
   demo_qa_checkout.tick_billing_address_box
 
   demo_qa_checkout.click_purchase
   demo_qa_checkout.click_continue_button
 end
 
-Then("I should receive the right error message") do
+Then("I should receive the right error messages") do
   demo_qa_checkout.check_email_error
+  demo_qa_checkout.check_first_name_error
+  demo_qa_checkout.check_address_error
+  demo_qa_checkout.check_city_error
+  demo_qa_checkout.check_billing_country_error
+  demo_qa_checkout.check_phone_num_error
 end
 
+=begin
 # @first_name_error
 When("I input an invalid first name in the form") do
   demo_qa_checkout.input_invalid_first_name
@@ -174,3 +178,4 @@ end
 Then("I should receive the surname error message") do
   demo_qa_checkout.check_surname_error
 end
+=end
