@@ -138,6 +138,14 @@ class CheckoutPage
     find(:id, "shippingSameBilling").click
   end
 
+  def input_invalid_email
+    fill_in(@@email_field, :with => @@random_generator.generate_invalid_username)
+  end
+
+  def check_email_error
+    page.has_content?("Please enter a valid email.")
+  end
+
   def click_purchase
     find(".input-button-buy").click
   end

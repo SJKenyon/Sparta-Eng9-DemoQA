@@ -59,9 +59,7 @@ Given("I have an item in my basket") do
 end
 
 Then("it should give me the correct success message") do
-  Then("it should give me the correct success message") do
-    demo_qa_checkout.check_successful_purchase
-  end
+  demo_qa_checkout.check_successful_purchase
 end
 
 
@@ -110,14 +108,13 @@ Then("I should receive the correct error message") do
   demo_qa_checkout.check_shipping_error_message
 end
 
-
-#@error_buy_product
-
-When("I input invalid details in the form") do
-
-  pending # Write code here that turns the phrase above into concrete actions
+#email_error
+When("I input an invalid email address in the form") do
+  demo_qa_checkout.input_invalid_email
+  demo_qa_checkout.click_purchase
+  demo_qa_checkout.click_continue_button
 end
 
 Then("I should receive the right error message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.check_email_error
 end
