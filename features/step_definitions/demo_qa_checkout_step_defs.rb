@@ -108,13 +108,47 @@ Then("I should receive the correct error message") do
   demo_qa_checkout.check_shipping_error_message
 end
 
-#email_error
+# @email_error
 When("I input an invalid email address in the form") do
   demo_qa_checkout.input_invalid_email
+
+  demo_qa_checkout.fill_first_name_field
+  demo_qa_checkout.fill_surname_field
+  demo_qa_checkout.fill_address_field
+  demo_qa_checkout.fill_city_field
+  demo_qa_checkout.fill_region_field
+  demo_qa_checkout.fill_postcode_field
+  demo_qa_checkout.fill_billing_country
+  demo_qa_checkout.fill_phone_num_field
+  demo_qa_checkout.tick_billing_address_box
+
   demo_qa_checkout.click_purchase
   demo_qa_checkout.click_continue_button
 end
 
 Then("I should receive the right error message") do
   demo_qa_checkout.check_email_error
+end
+
+# @first_name_error
+When("I input an invalid first name in the form") do
+  demo_qa_checkout.input_invalid_first_name
+
+  demo_qa_checkout.fill_email_field
+  demo_qa_checkout.fill_surname_field
+  demo_qa_checkout.fill_address_field
+  demo_qa_checkout.fill_city_field
+  demo_qa_checkout.fill_region_field
+  demo_qa_checkout.fill_postcode_field
+  demo_qa_checkout.fill_billing_country
+  demo_qa_checkout.fill_phone_num_field
+  demo_qa_checkout.tick_billing_address_box
+
+  demo_qa_checkout.click_purchase
+  demo_qa_checkout.click_continue_button
+
+end
+
+Then("I should receive the first name error message") do
+  demo_qa_checkout.check_first_name_error
 end

@@ -52,3 +52,10 @@ Feature: As a site user I want to use the checkout
     Given that I am on the checkout form page
     When I input an invalid email address in the form
     Then I should receive the right error message
+
+  @first_name_error
+  Scenario: I try to buy a product but have input an invalid first name
+
+    Given that I am on the checkout form page
+    When I input an invalid first name in the form
+    Then I should receive the first name error message

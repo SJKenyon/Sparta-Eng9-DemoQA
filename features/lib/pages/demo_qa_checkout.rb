@@ -146,8 +146,15 @@ class CheckoutPage
     page.has_content?("Please enter a valid email.")
   end
 
-  def click_purchase
-    find(".input-button-buy").click
+  def input_invalid_first_name
+    fill_in(@@first_name_field, :with => "")
   end
+
+  def check_first_name_error
+    page.has_content?("Please enter a valid first name.")
+  end
+  # def click_purchase
+  #   find(".input-button-buy").click
+  # end
 
 end #end of class
