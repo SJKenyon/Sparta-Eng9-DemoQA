@@ -21,40 +21,27 @@ Feature: As a site user I should be able to view products
     When I click on an item
     Then it should show me that specific items page
 
-@product_list
+  @product_list
   Scenario: I should be able to view all products in a list as standard
 
     Given I am on the homepage
     When I click the all products link
     Then I should see all the products in a list
 
-@product_grid
+  @product_grid
   Scenario: I should be able to view all products in a grid
 
     Given I am viewing all the products
     When I click to view the products in a grid
     Then it should show the products in a grid format
 
-@expand_image
+  @expand_image
   Scenario: I should be able to view expanded images of the products
 
     Given I am on a specific product page
     When I click on the photo
     And I click on the arrow to browse more photos
     Then it should bring up an expanded photo
-
-  @add_product_to_basket
-  Scenario: As a first time user I should be able to add a product to my basket
-
-    Given I am viewing a product
-    When I click add to cart on that one product
-    Then it should add that specific item to my basket
-
-  Scenario: I should be able to add three products to my basket
-
-    Given I am viewing the all products page
-    When I click add to cart on three seperate items
-    Then it should display those specific items in my basket
 
   @logo
   Scenario: I should be able to be redirected to the homepage when I click the logo
