@@ -59,12 +59,9 @@ Given("I have an item in my basket") do
 end
 
 Then("it should give me the correct success message") do
-  pending
+  demo_qa_checkout.check_successful_purchase
 end
 
-Then("it should redirect me to the checkout page") do
-  expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/products-page/checkout/")
-end
 
 Given("I have added one item to my basket") do
   demo_qa_products.visit_all_products_page
@@ -94,18 +91,44 @@ Then("there should only be three items to view") do
   demo_qa_checkout.check_item_count.should == 4
 end
 
-Given("I am viewing the all products page") do
-  demo_qa_products.visit_all_products
-end
-
 Given("that I am on the checkout form page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_iphone
+  demo_qa_products.add_to_cart
+  demo_qa_homepage.visit_checkout
+  demo_qa_checkout.click_continue_button
+
 end
 
-When("I input invalid details in the form") do
-  pending # Write code here that turns the phrase above into concrete actions
+#  @error_shipping_region
+When("I neglect to input a shipping region") do
+  demo_qa_checkout.click_calculate
 end
 
 Then("I should receive the correct error message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.check_shipping_error_message
+end
+
+# @form_errors. Checking that all the error messages
+# are working in one test
+When("I input invalid values in the form") do
+  demo_qa_checkout.input_invalid_email
+  demo_qa_checkout.input_invalid_first_name
+  demo_qa_checkout.input_invalid_surname
+  demo_qa_checkout.input_invalid_address
+  demo_qa_checkout.input_invalid_city
+  demo_qa_checkout.input_invalid_phone_num
+
+  demo_qa_checkout.tick_billing_address_box
+
+  demo_qa_checkout.click_purchase
+  demo_qa_checkout.click_continue_button
+end
+
+Then("I should receive the right error messages") do
+  demo_qa_checkout.check_email_error
+  demo_qa_checkout.check_first_name_error
+  demo_qa_checkout.check_address_error
+  demo_qa_checkout.check_city_error
+  demo_qa_checkout.check_billing_country_error
+  demo_qa_checkout.check_phone_num_error
 end

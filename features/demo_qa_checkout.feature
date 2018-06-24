@@ -20,15 +20,9 @@ Feature: As a site user I want to use the checkout
   Scenario: I want to purchase the products that are in my basket
 
     Given that I am on the checkout page
-    And there are items in my basket
+    And there is an item in my basket
     When I click the continue button
     And I fill in the form correctly
-    Then I should be able to effectuate my purchase
-
-  Scenario: As a user, I am able to purchase an item
-
-    Given I have an item in my basket
-    When I click checkout
     Then it should give me the correct success message
 
   @oneitem
@@ -45,15 +39,16 @@ Feature: As a site user I want to use the checkout
     When I view my basket
     Then there should only be three items to view
 
-  @error_buy_product
+  @error_shipping_region
+  Scenario: If I fail to input a shipping region, I should receive the correct error message
+
+    Given that I am on the checkout form page
+    When I neglect to input a shipping region
+    Then I should receive the correct error message
+
+  @form_errors
   Scenario: I try to buy a product but have input invalid form data
 
     Given that I am on the checkout form page
-    When I input invalid details in the form
-    Then I should receive the correct error message
-
-  Scenario:
-
-    Given
-    When
-    Then
+    When I input invalid values in the form
+    Then I should receive the right error messages
