@@ -153,6 +153,16 @@ class CheckoutPage
   def check_first_name_error
     page.has_content?("Please enter a valid first name.")
   end
+
+  def input_invalid_surname
+    fill_in(@@surname_field, :with => "")
+  end
+
+  def check_surname_error
+    page.has_content?("Please enter a valid last name.")
+  end
+
+  #there are two methods called click_purchase so not sur ewhich one to keep
   # def click_purchase
   #   find(".input-button-buy").click
   # end

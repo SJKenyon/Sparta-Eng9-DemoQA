@@ -59,3 +59,9 @@ Feature: As a site user I want to use the checkout
     Given that I am on the checkout form page
     When I input an invalid first name in the form
     Then I should receive the first name error message
+
+  @surname_error
+  Scenario: I try to buy a product but have input an invalid surname
+    Given that I am on the checkout form page
+    When I input an invalid surname in the form
+    Then I should receive the surname error message
