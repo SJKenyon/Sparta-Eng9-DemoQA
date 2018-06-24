@@ -29,6 +29,9 @@ class CheckoutPage
   @@phone_num_field = 'wpsc_checkout_form_18'
   @@billing_address_checkbox = 'shippingSameBilling'
 
+  def visit_checkout_url
+    visit(CHECKOUT_URL)
+  end
 
   def check_checkout_page
     page.has_content?(@@checkout_h1)
@@ -123,5 +126,20 @@ class CheckoutPage
 
 
 
+  def fill_out_form_correctly
+    find(:id, "wpsc_checkout_form_9").send_keys("example@gmail.com")
+    find(:id, "wpsc_checkout_form_2").send_keys("example")
+    find(:id, "wpsc_checkout_form_3").send_keys("sparta")
+    find(:id, "wpsc_checkout_form_4").send_keys("some random street")
+    find(:id, "wpsc_checkout_form_5").send_keys("city")
+    find(:id, "wpsc_checkout_form_6").send_keys("dont know")
+    # find("#wpsc_checkout_form_7").find(:xpath, 'option[2]').select_option
+    find(:id, "wpsc_checkout_form_18").send_keys("07856434567")
+    find(:id, "shippingSameBilling").click
+  end
+
+  def click_purchase
+    find(".input-button-buy").click
+  end
 
 end #end of class
