@@ -27,31 +27,39 @@ Then("I should see the subtotal of my basket on the checkout page") do
 end
 
 Given("that I am on the checkout page") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_all_products_page
+  demo_qa_products.visit_iphone
+  demo_qa_products.add_to_cart
+  demo_qa_products.find_checkout_text_1
+  demo_qa_homepage.click_checkout_button
 end
 
 And("there are items in my basket") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(demo_qa_checkout.check_item_count).to be >= 2
 end
 
 When("I click the continue button") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.click_continue
 end
 
 And("I fill in the form correctly") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_checkout.fill_out_form_correctly
+  demo_qa_checkout.click_purchase
 end
 
 Then("I should be able to effectuate my purchase") do
-  pending # Write code here that turns the phrase above into concrete actions
+  expect(demo_qa_homepage.current_url).to include("transaction-results")
 end
 
 Given("I have an item in my basket") do
-  pending # Write code here that turns the phrase above into concrete actions
+  demo_qa_products.visit_all_products_page
+  demo_qa_products.visit_iphone
+  demo_qa_products.add_to_cart
+  demo_qa_products.find_checkout_text_1
 end
 
 Then("it should give me the correct success message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  pending
 end
 
 Then("it should redirect me to the checkout page") do
@@ -72,7 +80,7 @@ When("I view my basket") do
 end
 
 Then("there should only be one item to view") do
-  demo_qa_checkout.check_item_count.should == 2
+  expect(demo_qa_checkout.check_item_count).to eq 2
 end
 
 Given("I have added three seperate items to my basket") do
