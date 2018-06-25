@@ -49,7 +49,7 @@ class CheckoutPage
   end
 
   def remove_item
-    find_field("Remove").click
+    find(:xpath, "/html/body/div[2]/div/div/div/div/div/article/div/div[2]/div[1]/table/tbody/tr[2]/td[6]/form/input[4]").click
   end
 
   def check_subtotal
