@@ -26,6 +26,23 @@ Feature: As a member I should be able to log in
     When I click to log in with my details
     Then it should give me the correct error message
 
+
+  @login_invalid_email
+  Scenario: I should not be able to log in with an invalid email
+
+    Given I am on the log in page
+    When I input an invalid email address
+    And I input a valid password
+    Then I should receive the right error message
+
+  @login_invalid_username
+  Scenario: I should not be able to log in with an invalid username
+
+    Given I am on the log in page
+    When I input an invalid username
+    And I input a valid password
+    Then I should receive the username error message
+
   @logout
   Scenario: I should be able to log out
 

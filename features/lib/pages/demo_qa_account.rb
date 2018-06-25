@@ -58,7 +58,7 @@ class AccountPage
   end
 
   def fill_in_correct_password
-    find(:id, "user_pass").send_keys("ilovesparta")
+    find(:id, "user_pass").send_keys("ilovesparta1")
   end
 
   def fill_in_incorrect_password
@@ -85,5 +85,23 @@ class AccountPage
     click_link("ONLINE STORE")
     click_link("Logout")
   end
+
+#this assumes we are using skenyon@spartaglobal.com as the only valid email address
+  def invalid_email
+    fill_in("user_login", :with => @@random_generator.generate_email_address)
+  end
+
+  def check_email_error
+    page.has_content?("ERROR: Invalid email address. Lost your password?")
+  end
+
+  def invalid_username
+    fill_in("user_login", :with => @@random_generator.generate_invalid_username)
+  end
+
+  def check_username_error
+    page.has_content?("ERROR: Invalid username. Lost your password?")
+  end
+
 
 end
