@@ -39,7 +39,7 @@ Feature: As a member I should be able to log in
   Scenario: I should not be able to log in with an invalid username
 
     Given I am on the log in page
-    When I input an invalid usernmae
+    When I input an invalid username
     And I input a valid password
     Then I should receive the username error message
 

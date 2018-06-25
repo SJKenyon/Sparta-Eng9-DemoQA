@@ -68,3 +68,10 @@ Then("I should receive the right error message") do
 end
 
 # @login_invalid_username
+When("I input an invalid username") do
+  demo_qa_account.invalid_username
+end
+
+Then("I should receive the username error message") do
+  demo_qa_account.check_username_error
+end
