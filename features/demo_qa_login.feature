@@ -2,7 +2,6 @@ Feature: As a member I should be able to log in
 
   @login_feature
   Scenario: I am able to get to the log in form
-
     Given I am on the homepage
     When I click my account
     And I click log in
@@ -10,7 +9,6 @@ Feature: As a member I should be able to log in
 
   @login_feature
   Scenario: I am able to log in with valid details
-
     Given I am on the log in page
     And I input the correct email
     And I input the correct password
@@ -19,7 +17,6 @@ Feature: As a member I should be able to log in
 
   @login_invalid_password
   Scenario: I should not be able to log in with an incorrect password
-
     Given I am on the log in page
     And I input the correct email
     And I input the incorrect password
@@ -45,7 +42,6 @@ Feature: As a member I should be able to log in
 
   @logout
   Scenario: I should be able to log out
-
     Given I am logged in
     When I click to log out
     Then it should redirect me to the home page
