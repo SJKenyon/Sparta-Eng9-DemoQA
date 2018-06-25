@@ -15,6 +15,7 @@ Feature: As a site user I want to use the checkout
   Then I should see the subtotal of my basket on the checkout page
 
   @buy_product
+  @high_risk
   Scenario: I want to purchase the products that are in my basket
     Given that I am on the checkout page
     And there is an item in my basket
@@ -47,6 +48,7 @@ Feature: As a site user I want to use the checkout
     Then I should receive the correct error message
 
   @form_errors
+  @high_risk
   Scenario: I try to buy a product but have input invalid form data
     Given that I am on the checkout form page
     When I input invalid values in the form

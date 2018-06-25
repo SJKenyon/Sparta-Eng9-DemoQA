@@ -1,4 +1,4 @@
-Feature: As a member I should be able to log in
+Feature: As a member I should be able to log in and out
 
   @login_feature
   Scenario: I am able to get to the log in form
@@ -8,6 +8,7 @@ Feature: As a member I should be able to log in
     Then it should take me to the log in page
 
   @login_feature
+  @high_risk
   Scenario: I am able to log in with valid details
     Given I am on the log in page
     And I input the correct email
@@ -16,6 +17,7 @@ Feature: As a member I should be able to log in
     Then it should redirect me to my profile
 
   @login_invalid_password
+  @high_risk
   Scenario: I should not be able to log in with an incorrect password
     Given I am on the log in page
     And I input the correct email
@@ -23,10 +25,8 @@ Feature: As a member I should be able to log in
     When I click to log in with my details
     Then it should give me the correct error message
 
-
   @login_invalid_email
   Scenario: I should not be able to log in with an invalid email
-
     Given I am on the log in page
     When I input an invalid email address
     And I input a valid password
@@ -34,7 +34,6 @@ Feature: As a member I should be able to log in
 
   @login_invalid_username
   Scenario: I should not be able to log in with an invalid username
-
     Given I am on the log in page
     When I input an invalid username
     And I input a valid password

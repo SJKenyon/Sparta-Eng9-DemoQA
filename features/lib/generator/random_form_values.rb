@@ -1,8 +1,8 @@
 require 'faker'
 
 class RandomFormValues
+  
   include Faker
-
 
   def generate_first_and_last_name
     @first_name = Faker::BackToTheFuture.character
@@ -73,7 +73,5 @@ class RandomFormValues
   def generate_postcode
     @postcode = Faker::Address.postcode
   end
-
-
 
 end #end of class

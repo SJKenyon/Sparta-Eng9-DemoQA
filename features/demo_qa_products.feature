@@ -3,8 +3,8 @@ Feature: As a site user I should be able to view products
   @all_products
   Scenario: I should be able to view all products
     Given I am on the homepage
-    When I hover on all products
-    Then it should display all product categories
+    When I click on all products
+    Then it should display all products
 
   @product_categories
   Scenario: I should be able to view products by catagory
@@ -13,6 +13,7 @@ Feature: As a site user I should be able to view products
     Then it should show me items relating to that category
 
   @single_item
+  @high_risk
   Scenario: I should be able to view a single item
     Given I am on the homepage
     When I click on an item
@@ -30,14 +31,8 @@ Feature: As a site user I should be able to view products
     When I click to view the products in a grid
     Then it should show the products in a grid format
 
-  @expand_image
-  Scenario: I should be able to view expanded images of the products
-    Given I am on a specific product page
-    When I click on the photo
-    And I click on the arrow to browse more photos
-    Then it should bring up an expanded photo
-
   @logo
+  @high_risk
   Scenario: I should be able to be redirected to the homepage when I click the logo
     Given I am not on the homepage
     When I click the demoqa logo

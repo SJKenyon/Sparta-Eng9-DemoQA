@@ -7,6 +7,7 @@ Feature: As a site user I should be able to register
     Then I should be taken to the register page
 
   @valid_register
+  @high_risk
   Scenario: I should be able to input my details to a form to register
     Given I am on the register page
     And I input a valid username

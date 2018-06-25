@@ -2,12 +2,12 @@ Given("I am on the homepage") do
   demo_qa_homepage.visit_homepage
 end
 
-When("I hover on all products") do
-  pending
+When("I click on all products") do
+  demo_qa_homepage.click_all_products_link
 end
 
-Then("it should display all product categories") do
-  demo_qa_products.check_product_categories
+Then("it should display all products") do
+  expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/products-page/product-category/")
 end
 
 When("I click on a product category") do
@@ -44,24 +44,6 @@ end
 
 Then("it should show the products in a grid format") do
   demo_qa_products.check_grid_view
-end
-
-Given("I am on a specific product page") do
-  demo_qa_homepage.visit_homepage
-  demo_qa_homepage.click_individual_item
-end
-
-When("I click on the photo") do
-  # demo_qa_products.click_product_image
-  pending
-end
-
-And("I click on the arrow to browse more photos") do
-  pending
-end
-
-Then("it should bring up an expanded photo") do
-  pending
 end
 
 Given("I am not on the homepage") do

@@ -13,9 +13,7 @@ class ProductsPage
   @people_also_bought = 'People who bought this item also bought:'
   @default_list_div = 'default_products_page_container'
 
-  #Using class variables here because contants are too heavy
-  # and instance variables are lighter but not available everywhere in
-  # the class. So class vars are a good compromise
+  # Using class variables here because contants are too heavy and instance variables are lighter but not available everywhere in the class
   @@grid_view_button = 'Grid'
   @@grid_view_div = 'grid_view_products_page_container'
   @@product_image = '.product-image'
