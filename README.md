@@ -1,4 +1,4 @@
-# UI Testing using ruby for the Demo QA website
+# UI Testing using Ruby for the Demo QA website
 
 This is a test automation framework built to test the user interface of the Demo QA e-commerce website: http://store.demoqa.com/
 
