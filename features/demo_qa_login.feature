@@ -26,11 +26,12 @@ Feature: As a member I should be able to log in
     When I click to log in with my details
     Then it should give me the correct error message
 
-  Scenario:
+  @login_invalid_email
+  Scenario: I should not be able to log in with an invalid email
 
-    Given
-    When
-    Then
+    Given I am on the log in page
+    When I input an invalid email address
+    Then I should receive the correct error message
 
   Scenario:
 
