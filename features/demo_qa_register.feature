@@ -14,3 +14,12 @@ Feature: As a site user I should be able to register
     And I input a valid email
     When I click to register the account
     Then it should show the correct registration message
+
+  @invalid_register
+  Scenario: I should not be able to register if I input an invalid email address
+
+    Given I am on the register page
+    And I input an invalid username
+    And I input a valid email
+    When I click to register the account
+    Then it should show the correct registration message
