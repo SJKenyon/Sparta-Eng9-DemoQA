@@ -13,7 +13,6 @@ class AccountPage
   WRONG_PASSWORD_ALERT = "ERROR: The password you entered for the email address skenyon@spartaglobal.com is incorrect."
   NO_USERNAME = "ERROR: The username field is empty."
   NO_PASSWORD = "ERROR: The password field is empty."
-  CORRECT_EMAIL = "skenyon@spartaglobal.com"
   @@random_generator = RandomFormValues.new
 
   def visit_account_page
@@ -45,24 +44,28 @@ class AccountPage
   end
 
   def fill_in_email
-    find(:id, "user_email").send_keys("example@gmail.com")
+    email = find(:id, "user_email")
+    email.send_keys("example@gmail.com")
   end
 
   def fill_in_username
-    find(:id, "user_login").send_keys("username")
+    username = find(:id, "user_login")
+    username.send_keys("username")
   end
 
   def fill_in_correct_email
-    # find(:id, "user_login").send_keys(CORRECT_EMAIL)
-    fill_in("user_login", :with => "skenyon@spartaglobal.com")
+    email = find(:id, "user_login")
+    email.send_keys("skenyon@spartaglobal.com")
   end
 
   def fill_in_correct_password
-    find(:id, "user_pass").send_keys("ilovesparta1")
+    password = find(:id, "user_pass")
+    password.send_keys("ilovesparta1")
   end
 
   def fill_in_incorrect_password
-    find(:id, "user_pass").send_keys("password")
+    password = find(:id, "user_pass")
+    password.send_keys("password")
   end
 
   def wrong_password_message
@@ -74,11 +77,13 @@ class AccountPage
   end
 
   def valid_username
-    fill_in("user_login", :with => @@random_generator.generate_username)
+    username = find(:id, "user_login")
+    username.send_keys(@@random_generator.generate_username)
   end
 
   def valid_email
-    fill_in("user_email", :with => @@random_generator.generate_email_address)
+    email = find(:id, "user_email")
+    email.send_keys(@@random_generator.generate_email_address)
   end
 
   def click_logout
@@ -86,9 +91,9 @@ class AccountPage
     click_link("Logout")
   end
 
-#this assumes we are using skenyon@spartaglobal.com as the only valid email address
   def invalid_email
-    fill_in("user_login", :with => @@random_generator.generate_email_address)
+    email = find(:id, "user_login")
+    email.send_keys(@@random_generator.generate_email_address)
   end
 
   def check_email_error
@@ -96,12 +101,12 @@ class AccountPage
   end
 
   def invalid_username
-    fill_in("user_login", :with => @@random_generator.generate_invalid_username)
+    email = find(:id, "user_login")
+    email.send_keys(@@random_generator.generate_invalid_username)
   end
 
   def check_username_error
     page.has_content?("ERROR: Invalid username. Lost your password?")
   end
-
 
 end

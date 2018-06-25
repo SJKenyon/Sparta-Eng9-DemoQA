@@ -11,11 +11,9 @@ class CheckoutPage
   @@checkout_h1 = 'Checkout'
   @@subtotal_span = 'Sub-Total:'
   @@continue_button = 'Continue'
-
   #Instantiating the random generator
   @@random_generator = RandomFormValues.new
-
-  #form fields IN CHECKOUT
+  #Form fields IN CHECKOUT
   @@purchase_button = 'Purchase'
   @@calculate_button = 'Calculate'
   @@email_field = 'wpsc_checkout_form_9'
@@ -61,8 +59,7 @@ class CheckoutPage
   end
 
   def fill_shipping_country
-    select(@@random_generator.random_country_from_array,
-      :from => 'country', visible: false)
+    select(@@random_generator.random_country_from_array, :from => 'country', visible: false)
   end
 
   def click_calculate
@@ -73,7 +70,7 @@ class CheckoutPage
     page.has_content?('Please specify shipping location below to calculate your shipping costs')
   end
 
-  #filling in the email and billing details part of the form
+  #Filling in the email and billing details part of the form
   def fill_email_field
     fill_in(@@email_field, :with => @@random_generator.generate_email_address)
   end
@@ -190,10 +187,5 @@ class CheckoutPage
   def check_phone_num_error
     page.has_content?("Please enter a valid phone.")
   end
-
-  #there are two methods called click_purchase so not sur ewhich one to keep
-  # def click_purchase
-  #   find(".input-button-buy").click
-  # end
 
 end #end of class
