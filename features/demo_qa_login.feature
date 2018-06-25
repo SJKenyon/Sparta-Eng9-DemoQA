@@ -46,6 +46,6 @@ Feature: As a member I should be able to log in
   @logout
   Scenario: I should be able to log out
 
-  Given I am logged in
-  When I click to log out
-  Then it should redirect me to the home page
+    Given I am logged in
+    When I click to log out
+    Then it should redirect me to the home page
