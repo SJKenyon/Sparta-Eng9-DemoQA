@@ -3,7 +3,11 @@
 This is a test automation framework built to test the user interface of the Demo QA e-commerce website: http://store.demoqa.com/
 
 ## How to run the program
-
+1. Clone this repository to your machine by downloading the zip file
+2. Extract the contents of the zip file
+3. Open the Terminal
+4. From the Sparta-Eng9-DemoQA directory, run the command ``cucumber`` in the console
+5. To run unit tests on the generator library, navigate to the features/lib/generator directory and run the command ``rspec``
 
 ## Original Test Plan
 
@@ -76,13 +80,13 @@ A great deal of progress was made in Sprint 2, since we committed ourselves to o
 - As a first time user, I should be able to click home and be redirected to the homepage (5)
 - As a member, I should be able to log in (5)
 - As a member, I should be able to log out (5)
-- As a first time user, I should be able to register
+- As a first time user, I should be able to register (5)
 
 
 ## OOP Approach
-Using Ruby objects, classes, superclasses and methods, we ensured a Page Object Model was implemented from the start. This enabled both team members to easily add more tests as they went by re-using previously defined objects and methods. One object can reference a hundred tests! Therefore, we were able to save the Product Owner precious time and money on his way to deploying the software.
+Using Ruby objects, classes, superclasses and methods, we ensured a Page Object Model was implemented from the start. This enabled both team members to easily add more tests as they went, by re-using previously defined objects and methods. One object can reference a hundred tests! Therefore, we were able to save the Product Owner precious time and money on his way to deploying the software.
 
 ## Tools and Technologies
-This project was a thorough exercise in Behaviour Driven Development. Writing the framework in Ruby, we used Selenium WebDriver to simulate the process of the user's journeys in the Chrome browser and the Capybara framework to simplify it. In addition, we used Cucumber as our test runner and we wrote use cases in the Gherkin syntax to facilitate easy comprehension in a multi-disciplinary team. We have tried to make our framework accessible to future testers wishing to add more tests, and business-minded people wishing to get an overview of the use cases covered.
+This project was a thorough exercise in Behaviour Driven Development. Writing the framework in Ruby, we used Selenium WebDriver to simulate the process of the user's journeys in the Chrome browser and the Capybara framework to simplify it. In addition, we used Cucumber as our test runner and we wrote use cases in the Gherkin syntax to facilitate easy comprehension in a multi-disciplinary team. We have tried to make our framework accessible to future testers wishing to add more tests, and to business-minded people wishing to get an overview of the use cases covered.
 
-Furthermore, we used a library of methods used to generate random information from the Faker library. This ensures that a diverse amount of inputs are being fed into the relevant tests, helping us to avoid the Pesticide Paradox.
+Furthermore, we used a library of methods, which we have been building gradually over the past few weeks, to generate random information from the Faker library. This ensures that a diverse amount of inputs are being fed into the relevant tests, helping us to avoid the Pesticide Paradox. We also ran unit tests on this generator library using RSpec.
