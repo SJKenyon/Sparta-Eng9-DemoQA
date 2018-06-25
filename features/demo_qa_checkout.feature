@@ -39,6 +39,13 @@ Feature: As a site user I want to use the checkout
     When I view my basket
     Then there should only be three items to view
 
+  @remove
+  Scenario: I should be able to remove items from my basket
+
+    Given there are items in my basket
+    When I click remove on an item
+    Then it should show one less item in my basket
+
   @error_shipping_region
   Scenario: If I fail to input a shipping region, I should receive the correct error message
 

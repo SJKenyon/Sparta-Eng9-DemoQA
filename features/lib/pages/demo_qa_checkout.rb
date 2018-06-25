@@ -48,6 +48,10 @@ class CheckoutPage
     page.all('table tr').count
   end
 
+  def remove_item
+    find_field("Remove").click
+  end
+
   def check_subtotal
     page.has_content?(@@subtotal_span)
   end
