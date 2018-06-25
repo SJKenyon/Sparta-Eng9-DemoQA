@@ -18,7 +18,15 @@ describe 'Welcome to the unit tests for the Random Generators!' do
     end
 
     it "should return a phone number in a string" do
-      expect(@form_data_generator.generate_phone_number).to be_a(Integer)
+      expect(@form_data_generator.generate_phone_number).to be_a(String)
+    end
+
+    it "should return a password of eight characters or more" do
+      expect(@form_data_generator.generate_password.length).to be >= 8
+    end
+
+    it "should return a phone number of ten digits or more" do
+      expect(@form_data_generator.generate_phone_number.length). to be >= 10
     end
 
 
