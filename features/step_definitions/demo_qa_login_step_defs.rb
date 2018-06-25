@@ -38,21 +38,6 @@ Then("it should give me the correct error message") do
   expect(demo_qa_account.wrong_password_message).to eq true
 end
 
-Given("I am logged in") do
-  demo_qa_account.visit_login
-  demo_qa_account.fill_in_correct_email
-  demo_qa_account.fill_in_correct_password
-  demo_qa_account.click_login_account
-end
-
-When("I click to log out") do
-  demo_qa_account.click_logout
-end
-
-Then("it should redirect me to the home page") do
-  expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/")
-end
-
 # @login_invalid_email
 When("I input an invalid email address") do
   demo_qa_account.invalid_email
@@ -74,4 +59,19 @@ end
 
 Then("I should receive the username error message") do
   demo_qa_account.check_username_error
+end
+
+Given("I am logged in") do
+  demo_qa_account.visit_login
+  demo_qa_account.fill_in_correct_email
+  demo_qa_account.fill_in_correct_password
+  demo_qa_account.click_login_account
+end
+
+When("I click to log out") do
+  demo_qa_account.click_logout
+end
+
+Then("it should redirect me to the home page") do
+  expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/")
 end

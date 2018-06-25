@@ -1,12 +1,8 @@
 require 'faker'
 
 class RandomFormValues
-  
-  include Faker
 
-  def generate_first_and_last_name
-    @first_name = Faker::BackToTheFuture.character
-  end
+  include Faker
 
   def generate_last_name
     @last_name = Faker::DrWho.character
@@ -30,22 +26,6 @@ class RandomFormValues
 
   def generate_email_address
     @email_address = Faker::Internet.email
-  end
-
-  def generate_incorrect_length_password
-    @incorrect_length_password = Faker::Internet.password(10, 20)
-  end
-
-  def generate_birth_day
-    @birth_day = Faker::Number.between(1, 28)
-  end
-
-  def generate_birth_month
-    @birth_month = Faker::Number.between(1, 12)
-  end
-
-  def generate_over_thirteen_year
-    @birth_year = Faker::Number.between(1918, 2005)
   end
 
   #DEMO QA SDET PROJECT

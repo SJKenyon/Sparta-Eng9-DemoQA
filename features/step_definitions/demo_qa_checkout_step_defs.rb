@@ -19,7 +19,7 @@ And("I click on add to cart") do
   demo_qa_products.find_checkout_text_1
 end
 
-And("I click on the checkout button") do
+When("I click on the checkout button") do
   demo_qa_homepage.visit_checkout
 end
 
@@ -46,17 +46,6 @@ end
 And("I fill in the form correctly") do
   demo_qa_checkout.fill_out_form_correctly
   demo_qa_checkout.click_purchase
-end
-
-Then("I should be able to effectuate my purchase") do
-  expect(demo_qa_homepage.current_url).to include("transaction-results")
-end
-
-Given("I have an item in my basket") do
-  demo_qa_products.visit_all_products_page
-  demo_qa_products.visit_iphone
-  demo_qa_products.add_to_cart
-  demo_qa_products.find_checkout_text_1
 end
 
 Then("it should give me the correct success message") do
@@ -123,7 +112,7 @@ Then("I should receive the correct error message") do
   demo_qa_checkout.check_shipping_error_message
 end
 
-# @form_errors. Checking that all the error messages are working in one test
+# @form_errors
 When("I input invalid values in the form") do
   demo_qa_checkout.input_invalid_email
   demo_qa_checkout.input_invalid_first_name
