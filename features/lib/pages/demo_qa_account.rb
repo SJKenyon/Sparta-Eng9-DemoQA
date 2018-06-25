@@ -119,4 +119,12 @@ class AccountPage
     email.send_keys(@@random_generator.generate_invalid_username)
   end
 
+  def check_register_username_error
+    page.has_content?("ERROR: This username is already registered. Please choose another one.")
+  end
+
+  def check_register_email_error
+    page.has_content?("ERROR: The email address isn’t correct.")
+  end
+
 end

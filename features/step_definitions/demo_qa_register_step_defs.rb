@@ -31,3 +31,16 @@ Then("it should show the correct registration message") do
 end
 
 # @invalid_register
+And("I input a username that is already taken") do
+  demo_qa_account.register_taken_username
+end
+
+And("I input an invalid email") do
+  demo_qa_account.register_invalid_email
+  demo_qa_account.click_to_register
+end
+
+Then("it should show the correct error messages") do
+  demo_qa_account.check_register_username_error
+  demo_qa_account.check_register_email_error
+end
