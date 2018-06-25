@@ -16,10 +16,9 @@ Feature: As a site user I should be able to register
     Then it should show the correct registration message
 
   @invalid_register
-  Scenario: I should not be able to register if I input an invalid email address
-
+  Scenario: I should not be able to register if I input invalid form data
     Given I am on the register page
-    And I input an invalid username
-    And I input a valid email
+    And I input a username that is already taken
+    And I input an invalid email
     When I click to register the account
-    Then it should show the correct registration message
+    Then it should show the correct error messages

@@ -29,3 +29,5 @@ end
 Then("it should show the correct registration message") do
   expect(demo_qa_account.successful_reg).to eq true
 end
+
+# @invalid_register
