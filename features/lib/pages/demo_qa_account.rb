@@ -86,4 +86,13 @@ class AccountPage
     click_link("Logout")
   end
 
+#this assumes we are using skenyon@spartaglobal.com as the only valid email address
+  def invalid_email
+    fill_in("user_email", :with => @@random_generator.generate_email_address)
+  end
+
+  def check_email_error
+    page.has_content?("ERROR: Invalid email address. Lost your password?")
+  end
+
 end

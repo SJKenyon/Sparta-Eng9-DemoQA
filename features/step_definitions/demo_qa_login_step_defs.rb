@@ -52,3 +52,19 @@ end
 Then("it should redirect me to the home page") do
   expect(demo_qa_homepage.current_url).to eq("http://store.demoqa.com/")
 end
+
+# @login_invalid_email
+When("I input an invalid email address") do
+  demo_qa_account.invalid_email
+end
+
+When("I input a valid password") do
+  demo_qa_account.fill_in_correct_password
+  demo_qa_account.click_login_account
+end
+
+Then("I should receive the right error message") do
+  demo_qa_account.check_email_error
+end
+
+# @login_invalid_username
