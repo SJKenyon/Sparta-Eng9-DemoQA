@@ -26,26 +26,9 @@ Feature: As a member I should be able to log in
     When I click to log in with my details
     Then it should give me the correct error message
 
-  Scenario:
+  @logout
+  Scenario: I should be able to log out
 
-    Given
-    When
-    Then
-
-  Scenario:
-
-    Given
-    When
-    Then
-
-  Scenario:
-
-    Given
-    When
-    Then
-
-  Scenario:
-
-    Given
-    When
-    Then
+    Given I am logged in
+    When I click to log out
+    Then it should redirect me to the home page

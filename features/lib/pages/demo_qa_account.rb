@@ -13,7 +13,7 @@ class AccountPage
   WRONG_PASSWORD_ALERT = "ERROR: The password you entered for the email address skenyon@spartaglobal.com is incorrect."
   NO_USERNAME = "ERROR: The username field is empty."
   NO_PASSWORD = "ERROR: The password field is empty."
-  CORRECT_EMAIL = ".           skenyon@spartaglobal.com"
+  CORRECT_EMAIL = "skenyon@spartaglobal.com"
   @@random_generator = RandomFormValues.new
 
   def visit_account_page
@@ -53,7 +53,8 @@ class AccountPage
   end
 
   def fill_in_correct_email
-    find(:id, "user_login").send_keys(CORRECT_EMAIL)
+    # find(:id, "user_login").send_keys(CORRECT_EMAIL)
+    fill_in("user_login", :with => "skenyon@spartaglobal.com")
   end
 
   def fill_in_correct_password
@@ -78,6 +79,11 @@ class AccountPage
 
   def valid_email
     fill_in("user_email", :with => @@random_generator.generate_email_address)
+  end
+
+  def click_logout
+    click_link("ONLINE STORE")
+    click_link("Logout")
   end
 
 end
