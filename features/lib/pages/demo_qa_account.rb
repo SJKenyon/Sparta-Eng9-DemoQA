@@ -58,7 +58,7 @@ class AccountPage
   end
 
   def fill_in_correct_password
-    find(:id, "user_pass").send_keys("ilovesparta")
+    find(:id, "user_pass").send_keys("ilovesparta1")
   end
 
   def fill_in_incorrect_password

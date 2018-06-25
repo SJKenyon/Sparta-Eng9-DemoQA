@@ -91,6 +91,21 @@ Then("there should only be three items to view") do
   expect(demo_qa_checkout.check_item_count).to eq 4
 end
 
+Given("there are items in my basket") do
+  demo_qa_products.visit_all_products_page
+  demo_qa_products.find_buy_buttons
+  demo_qa_products.find_checkout_text_3
+  demo_qa_homepage.click_checkout_button
+end
+
+When("I click remove on an item") do
+  demo_qa_checkout.remove_item
+end
+
+Then("it should show one less item in my basket") do
+  expect(demo_qa_checkout.check_item_count).to eq 3
+end
+
 Given("that I am on the checkout form page") do
   demo_qa_products.visit_iphone
   demo_qa_products.add_to_cart
