@@ -29,19 +29,3 @@ end
 Then("it should show the correct registration message") do
   expect(demo_qa_account.successful_reg).to eq true
 end
-
-Given("I have got email confirmation") do
-  pending
-end
-
-When("I click the verify link") do
-  pending
-end
-
-When("I create a valid password") do
-  pending
-end
-
-Then("it should let me log in") do
-  pending
-end

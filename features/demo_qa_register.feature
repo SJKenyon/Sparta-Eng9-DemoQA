@@ -15,11 +15,3 @@ Feature: As a site user I should be able to register
     And I input a valid email
     When I click to register the account
     Then it should show the correct registration message
-
-  @confirm_account
-  Scenario: I am able to confirm my account
-
-    Given I have got email confirmation
-    When I click the verify link
-    And I create a valid password
-    Then it should let me log in
