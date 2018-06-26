@@ -1,5 +1,5 @@
 require 'capybara/dsl'
-require_relative '../generator/random_form_values'
+require_relative '../../../generator/lib/random_form_values'
 
 class CheckoutPage
 

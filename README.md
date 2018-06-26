@@ -10,7 +10,7 @@ This is a test automation framework built to test the user interface of the Demo
 5. From the Sparta-Eng9-DemoQA directory, run the command ``cucumber`` in the console.
   - For the tests to run you will need to create your own ".env" file in the root of the project. You will need to add your own variables which are DEMOQA_EMAIL=[your email] and DEMOQA_PASSWORD=[your password]. These will come from making an account of the demoqa website from your computer. For any help using dotenv files, use this [documentation](https://github.com/bkeepers/dotenv).
 
-6. To run unit tests on the generator library, navigate to the features/lib/generator directory and run the command ``rspec``.
+6. To run unit tests on the generator library, navigate to the generator directory and run the command ``rspec``.
 
 ## Original Test Plan
 

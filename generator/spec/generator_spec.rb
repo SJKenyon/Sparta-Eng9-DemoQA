@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'Welcome to the unit tests for the Random Generators!' do
 
-  before(:each) do
+  before(:all) do
     @form_data_generator = RandomFormValues.new
     @random_postcode = RandomPostcodeGenerator.new
   end
