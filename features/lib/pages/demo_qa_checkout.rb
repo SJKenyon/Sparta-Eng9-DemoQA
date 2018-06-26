@@ -37,7 +37,7 @@ class CheckoutPage
   end
 
   def get_checkout_error_message
-    find('entry-content', :visible => false).value
+    find(:xpath, '//*[@id="post-29"]/div').value
   end
 
   def find_checkout_quantity
