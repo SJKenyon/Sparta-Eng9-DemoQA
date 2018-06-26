@@ -73,11 +73,11 @@ class AccountPage
   end
 
   def wrong_password_message
-    page.has_content?(@wrong_password_alert)
+    page.find(:css, '#login_error').has_content?(@wrong_password_alert)
   end
 
   def successful_reg
-    page.has_content?(@successful_registration)
+    page.first(:xpath, '//p').has_content?(@successful_registration)
   end
 
   def valid_username
@@ -101,7 +101,7 @@ class AccountPage
   end
 
   def check_email_error
-    page.has_content?("ERROR: Invalid email address. Lost your password?")
+    page.find(:css, '#login_error').has_content?("ERROR: Invalid email address. Lost your password?")
   end
 
   def invalid_username
@@ -110,7 +110,7 @@ class AccountPage
   end
 
   def check_username_error
-    page.has_content?("ERROR: Invalid username. Lost your password?")
+    page.find(:css, '#login_error').has_content?("ERROR: Invalid username. Lost your password?")
   end
 
   def register_taken_username
@@ -124,11 +124,11 @@ class AccountPage
   end
 
   def check_register_username_error
-    page.has_content?("ERROR: This username is already registered. Please choose another one.")
+    page.find(:css, '#login_error').has_content?("ERROR: This username is already registered. Please choose another one.")
   end
 
   def check_register_email_error
-    page.has_content?("ERROR: The email address isn’t correct.")
+    page.find(:css, '#login_error').has_content?("ERROR: The email address isn’t correct.")
   end
 
 end

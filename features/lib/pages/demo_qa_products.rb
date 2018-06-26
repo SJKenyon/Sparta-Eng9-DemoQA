@@ -7,10 +7,8 @@ class ProductsPage
   def initialize
     @all_products_url = "http://store.demoqa.com/products-page/product-category/"
     @iphone_url = "http://store.demoqa.com/products-page/product-category/n/"
-    @product_category_h1 = 'Product Category'
     @accessories_category_h1 = 'Accessories'
     @single_product_div = 'single_product_page_container'
-    @people_also_bought = 'People who bought this item also bought:'
     @default_list_div = 'default_products_page_container'
     @grid_view_button = 'Grid'
     @grid_view_div = 'grid_view_products_page_container'
@@ -18,21 +16,16 @@ class ProductsPage
     @item_message_added = "Item has been added to your cart!"
   end
 
-  def check_product_categories
-    page.has_content?(@product_category_h11)
-  end
-
   def check_accessories_category
-    page.has_content?(@accessories_category_h1)
+    page.find(:css, 'ul li').has_content?(@accessories_category_h1)
   end
 
   def check_single_product_page
-    page.has_content?(@single_product_div)
-    page.has_content?(@people_also_bought)
+    page.find(:xpath, '//div[@id="content"]').has_content?(@single_product_div)
   end
 
   def check_product_list
-    page.has_content?(@@default_list_div)
+    page.find(:xpath, '//div[@id="content"]').has_content?(@default_list_div)
   end
 
   def visit_all_products_page
@@ -44,7 +37,7 @@ class ProductsPage
   end
 
   def check_grid_view
-    page.has_content?(@grid_view_div)
+    page.find(:xpath, '//div[@id="content"]').has_content?(@grid_view_div)
   end
 
   def click_product_image
@@ -64,7 +57,7 @@ class ProductsPage
   end
 
   def item_added
-    page.has_content?(@item_message_added)
+    page.find(:xpath, '//div[@id="content"]').has_content?(@item_message_added)
   end
 
   def find_checkout_text_1
