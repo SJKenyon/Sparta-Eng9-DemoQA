@@ -3,11 +3,14 @@
 This is a test automation framework built to test the user interface of the Demo QA e-commerce website: http://store.demoqa.com/
 
 ## How to run the program
-1. Clone this repository to your machine by downloading the zip file
-2. Extract the contents of the zip file
-3. Open the Terminal
-4. From the Sparta-Eng9-DemoQA directory, run the command ``cucumber`` in the console
-5. To run unit tests on the generator library, navigate to the features/lib/generator directory and run the command ``rspec``
+1. Clone this repository to your machine by downloading the zip file.
+2. Extract the contents of the zip file.
+3. Open the Terminal.
+4. Run the command ``bundle`` to ensure all the gems are installed correctly.
+5. From the Sparta-Eng9-DemoQA directory, run the command ``cucumber`` in the console.
+  - For the tests to run you will need to create your own ".env" file in the root of the project. You will need to add your own variables which are DEMOQA_EMAIL=[your email] and DEMOQA_PASSWORD=[your password]. These will come from making an account of the demoqa website from your computer. For any help using dotenv files, use this [documentation](https://github.com/bkeepers/dotenv).
+
+6. To run unit tests on the generator library, navigate to the features/lib/generator directory and run the command ``rspec``.
 
 ## Original Test Plan
 
