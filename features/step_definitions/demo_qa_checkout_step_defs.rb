@@ -126,10 +126,11 @@ When("I input invalid values in the form") do
 end
 
 Then("I should receive the right error messages") do
-  demo_qa_checkout.check_email_error
-  demo_qa_checkout.check_first_name_error
-  demo_qa_checkout.check_address_error
-  demo_qa_checkout.check_city_error
-  demo_qa_checkout.check_billing_country_error
-  demo_qa_checkout.check_phone_num_error
+  expect(demo_qa_checkout.get_email_error).to eq(@email_error_message)
+  expect(demo_qa_checkout.get_first_name_error). to eq(@first_name_error_message)
+  expect(demo_qa_checkout.get_surname_error).to eq(@surname_error_message)
+  expect(demo_qa_checkout.get_address_error).to eq(@address_error_message)
+  expect(demo_qa_checkout.get_city_error).to eq(@city_error_message)
+  expect(demo_qa_checkout.get_billing_country_error).to eq(@billing_country_error_message)
+  expect(demo_qa_checkout.get_phone_num_error).to eq(@phone_error_message)
 end
