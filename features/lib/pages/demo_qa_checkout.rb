@@ -9,6 +9,7 @@ class CheckoutPage
     @homepage_url = "http://store.demoqa.com/"
     @checkout_url = "http://store.demoqa.com/products-page/checkout/"
     @checkout_error_message = 'Oops, there is nothing in your cart.'
+    @shipping_error_message = 'Please specify shipping location below to calculate your shipping costs'
     @checkout_h1 = 'Checkout'
     @subtotal_span = 'Sub-Total:'
     @continue_button = 'Continue'
@@ -68,8 +69,8 @@ class CheckoutPage
     click_on(@calculate_button)
   end
 
-  def check_shipping_error_message
-    page.has_content?('Please specify shipping location below to calculate your shipping costs')
+  def get_shipping_error_message
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/table/tbody/tr[1]/td').value
   end
 
   #Filling in the email and billing details part of the form

@@ -109,7 +109,7 @@ When("I neglect to input a shipping region") do
 end
 
 Then("I should receive the correct error message") do
-  demo_qa_checkout.check_shipping_error_message
+  expect(demo_qa_checkout.get_shipping_error_message). to eq(@shipping_error_message)
 end
 
 # @form_errors
