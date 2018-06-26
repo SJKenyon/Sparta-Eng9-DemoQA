@@ -7,7 +7,7 @@ And("I am redirected to the checkout page") do
 end
 
 Then("I should see the correct error message") do
-  demo_qa_checkout.check_error_message
+  expect(demo_qa_checkout.get_checkout_error_message).to eq("Oops, there is nothing in your cart.")
 end
 
 Given("that I am on an individual product page") do

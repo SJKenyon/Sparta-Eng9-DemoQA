@@ -36,8 +36,8 @@ class CheckoutPage
     page.has_content?(@checkout_h1)
   end
 
-  def check_error_message
-    page.has_content?(@checkout_error_message)
+  def get_checkout_error_message
+    @checkout_error_message
   end
 
   def find_checkout_quantity
