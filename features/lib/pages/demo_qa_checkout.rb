@@ -37,7 +37,7 @@ class CheckoutPage
   end
 
   def get_checkout_error_message
-    @checkout_error_message
+    find('entry-content', :visible => false).value
   end
 
   def find_checkout_quantity
