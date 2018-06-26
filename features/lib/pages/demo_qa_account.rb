@@ -14,9 +14,11 @@ class AccountPage
     @wrong_password_alert = "ERROR: The password you entered for the email address skenyon@spartaglobal.com is incorrect."
     @no_username = "ERROR: The username field is empty."
     @no_password = "ERROR: The password field is empty."
+    @email = ENV['DEMOQA_EMAIL']
+    @password = ENV['DEMOQA_PASSWORD']
     @random_generator = RandomFormValues.new
   end
-  
+
   def visit_account_page
     visit(@account_url)
   end
@@ -57,12 +59,12 @@ class AccountPage
 
   def fill_in_correct_email
     email = find(:id, "user_login")
-    email.send_keys("skenyon@spartaglobal.com")
+    email.send_keys(@email)
   end
 
   def fill_in_correct_password
     password = find(:id, "user_pass")
-    password.send_keys("ilovesparta1")
+    password.send_keys(@password)
   end
 
   def fill_in_incorrect_password

@@ -1,6 +1,9 @@
 require 'capybara/cucumber'
 require 'capybara/dsl'
+require 'pry'
 require_relative '../lib/demo_qa_site'
+require 'dotenv'
+Dotenv.load(".env")
 
 Capybara.register_driver :chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
