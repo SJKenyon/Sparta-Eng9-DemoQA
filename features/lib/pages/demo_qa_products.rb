@@ -17,7 +17,7 @@ class ProductsPage
   end
 
   def check_accessories_category
-    page.find(:css, 'ul li').has_content?(@accessories_category_h1)
+    page.find(:xpath, '//div[@id="content"]').has_content?(@accessories_category_h1)
   end
 
   def check_single_product_page
