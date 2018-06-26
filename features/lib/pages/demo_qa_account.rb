@@ -5,26 +5,28 @@ class AccountPage
 
   include Capybara::DSL
 
-  HOMEPAGE_URL = "http://store.demoqa.com/"
-  LOGIN_URL = "http://store.demoqa.com/wp-login.php"
-  ACCOUNT_URL = "http://store.demoqa.com/products-page/your-account/"
-  REGISTER_URL = "http://store.demoqa.com/wp-login.php?action=register"
-  SUCCESSFUL_REGISTRATION = "Registration complete. Please check your email."
-  WRONG_PASSWORD_ALERT = "ERROR: The password you entered for the email address skenyon@spartaglobal.com is incorrect."
-  NO_USERNAME = "ERROR: The username field is empty."
-  NO_PASSWORD = "ERROR: The password field is empty."
-  @@random_generator = RandomFormValues.new
-
+  def initialize
+    @homepage_url = "http://store.demoqa.com/"
+    @login_url = "http://store.demoqa.com/wp-login.php"
+    @account_url = "http://store.demoqa.com/products-page/your-account/"
+    @register_url = "http://store.demoqa.com/wp-login.php?action=register"
+    @successful_registration = "Registration complete. Please check your email."
+    @wrong_password_alert = "ERROR: The password you entered for the email address skenyon@spartaglobal.com is incorrect."
+    @no_username = "ERROR: The username field is empty."
+    @no_password = "ERROR: The password field is empty."
+    @random_generator = RandomFormValues.new
+  end
+  
   def visit_account_page
-    visit(ACCOUNT_URL)
+    visit(@account_url)
   end
 
   def visit_register
-    visit(REGISTER_URL)
+    visit(@register_url)
   end
 
   def visit_login
-    visit(LOGIN_URL)
+    visit(@login_url)
   end
 
   def click_register
@@ -69,21 +71,21 @@ class AccountPage
   end
 
   def wrong_password_message
-    page.has_content?(WRONG_PASSWORD_ALERT)
+    page.has_content?(@wrong_password_alert)
   end
 
   def successful_reg
-    page.has_content?(SUCCESSFUL_REGISTRATION)
+    page.has_content?(@successful_registration)
   end
 
   def valid_username
     username = find(:id, "user_login")
-    username.send_keys(@@random_generator.generate_username)
+    username.send_keys(@random_generator.generate_username)
   end
 
   def valid_email
     email = find(:id, "user_email")
-    email.send_keys(@@random_generator.generate_email_address)
+    email.send_keys(@random_generator.generate_email_address)
   end
 
   def click_logout
@@ -93,7 +95,7 @@ class AccountPage
 
   def invalid_email
     email = find(:id, "user_login")
-    email.send_keys(@@random_generator.generate_email_address)
+    email.send_keys(@random_generator.generate_email_address)
   end
 
   def check_email_error
@@ -102,7 +104,7 @@ class AccountPage
 
   def invalid_username
     email = find(:id, "user_login")
-    email.send_keys(@@random_generator.generate_invalid_username)
+    email.send_keys(@random_generator.generate_invalid_username)
   end
 
   def check_username_error
@@ -116,7 +118,7 @@ class AccountPage
 
   def register_invalid_email
     email = find(:id, "user_email")
-    email.send_keys(@@random_generator.generate_invalid_username)
+    email.send_keys(@random_generator.generate_invalid_username)
   end
 
   def check_register_username_error
