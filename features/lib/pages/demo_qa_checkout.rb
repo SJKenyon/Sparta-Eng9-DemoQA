@@ -9,6 +9,14 @@ class CheckoutPage
     @homepage_url = "http://store.demoqa.com/"
     @checkout_url = "http://store.demoqa.com/products-page/checkout/"
     @checkout_error_message = 'Oops, there is nothing in your cart.'
+    @shipping_error_message = 'Please specify shipping location below to calculate your shipping costs'
+    @email_error_message = "Please enter a valid email."
+    @first_name_error_message = "Please enter a valid first name."
+    @surname_error_message = "Please enter a valid last name."
+    @address_error_message = "Please enter a valid address."
+    @city_error_message = "Please enter a valid city."
+    @billing_country_error_message = "Please enter a valid country."
+    @phone_error_message = "Please enter a valid phone."
     @checkout_h1 = 'Checkout'
     @subtotal_span = 'Sub-Total:'
     @continue_button = 'Continue'
@@ -36,8 +44,8 @@ class CheckoutPage
     page.has_content?(@checkout_h1)
   end
 
-  def check_error_message
-    page.has_content?(@checkout_error_message)
+  def get_checkout_error_message
+    find(:xpath, '//*[@id="post-29"]/div').value
   end
 
   def find_checkout_quantity
@@ -68,8 +76,8 @@ class CheckoutPage
     click_on(@calculate_button)
   end
 
-  def check_shipping_error_message
-    page.has_content?('Please specify shipping location below to calculate your shipping costs')
+  def get_shipping_error_message
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/table/tbody/tr[1]/td').value
   end
 
   #Filling in the email and billing details part of the form
@@ -162,32 +170,32 @@ class CheckoutPage
     fill_in(@phone_num_field, :with => "")
   end
 
-  def check_email_error
-    page.has_content?("Please enter a valid email.")
+  def get_email_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/div/p[2]').value
   end
 
-  def check_first_name_error
-    page.has_content?("Please enter a valid first name.")
+  def get_first_name_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[2]/td[2]/p').value
   end
 
-  def check_surname_error
-    page.has_content?("Please enter a valid last name.")
+  def get_surname_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[3]/td[2]/p').value
   end
 
-  def check_address_error
-    page.has_content?("Please enter a valid address.")
+  def get_address_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[4]/td[2]/p').value
   end
 
-  def check_city_error
-    page.has_content?("Please enter a valid city.")
+  def get_city_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[5]/td[2]/p').value
   end
 
-  def check_billing_country_error
-    page.has_content?("Please enter a valid country.")
+  def get_billing_country_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[7]/td[2]/p').value
   end
 
-  def check_phone_num_error
-    page.has_content?("Please enter a valid phone.")
+  def get_phone_num_error
+    find(:xpath, '//*[@id="wpsc_shopping_cart_container"]/form/div[1]/table[1]/tbody/tr[9]/td[2]/p').value
   end
 
 end #end of class

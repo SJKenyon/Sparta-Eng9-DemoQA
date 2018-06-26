@@ -7,7 +7,7 @@ And("I am redirected to the checkout page") do
 end
 
 Then("I should see the correct error message") do
-  demo_qa_checkout.check_error_message
+  expect(demo_qa_checkout.get_checkout_error_message).to eq(@checkout_error_message)
 end
 
 Given("that I am on an individual product page") do
@@ -109,7 +109,7 @@ When("I neglect to input a shipping region") do
 end
 
 Then("I should receive the correct error message") do
-  demo_qa_checkout.check_shipping_error_message
+  expect(demo_qa_checkout.get_shipping_error_message). to eq(@shipping_error_message)
 end
 
 # @form_errors
@@ -126,10 +126,11 @@ When("I input invalid values in the form") do
 end
 
 Then("I should receive the right error messages") do
-  demo_qa_checkout.check_email_error
-  demo_qa_checkout.check_first_name_error
-  demo_qa_checkout.check_address_error
-  demo_qa_checkout.check_city_error
-  demo_qa_checkout.check_billing_country_error
-  demo_qa_checkout.check_phone_num_error
+  expect(demo_qa_checkout.get_email_error).to eq(@email_error_message)
+  expect(demo_qa_checkout.get_first_name_error). to eq(@first_name_error_message)
+  expect(demo_qa_checkout.get_surname_error).to eq(@surname_error_message)
+  expect(demo_qa_checkout.get_address_error).to eq(@address_error_message)
+  expect(demo_qa_checkout.get_city_error).to eq(@city_error_message)
+  expect(demo_qa_checkout.get_billing_country_error).to eq(@billing_country_error_message)
+  expect(demo_qa_checkout.get_phone_num_error).to eq(@phone_error_message)
 end
